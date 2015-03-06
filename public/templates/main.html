@@ -1,0 +1,20 @@
+<div>
+	    <h2>Template Button</h2>
+
+	    <h3>Step 1: Generate template in gui</h3>
+	    <text-angular ng-model="dataService.html"></text-angular>
+
+	    <h3>Step 2: Add Guider and Variable Tags</h3>
+	    <!-- <textarea assign-data="dataService.html" ng-trim="false" style="white-space: pre-wrap;word-wrap: break-word"></textarea> -->
+	    <list-templates></list-templates>
+	    <save-template></save-template>
+
+	    <tour-steps></tour-steps>
+
+	    <h2>Live Preview</h2>
+	    <button onclick="tour.start()">Tour</button>
+	    <a href="/#/customer">Customer Preview</a>
+	    <div id="formHTML" compile-html="dataService.html"></div>
+
+	    <div id="testDiv"></div>
+</div>
