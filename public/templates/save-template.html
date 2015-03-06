@@ -1,9 +1,9 @@
 <form>
 	<label for="name"> Template Name</label>
-	<input name="name" />
+	<input name="name"/>
 
 	<label for="html"> Add guider tags</label>
 	<textarea name="html" assign-data="dataService.html" ng-trim="false" style="white-space: pre-wrap;word-wrap: break-word"></textarea>
 
-	<button>Save</button>
+	<button ng-click="saveTemplate(form)">Save</button>
 </form>

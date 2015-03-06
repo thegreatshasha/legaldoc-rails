@@ -1,3 +1,11 @@
 <div>
-{{data}}
+	<h1>Templates:</h1>
+	<div ng-if="data">
+		<ul ng-repeat="template in data track by $index">
+		  <li>
+		  	<span>{{template.name}}</span>
+		  	<button ng-click="selectTemplate(template)">Choose</button>
+		  </li>
+		</ul>
+	</div>
 </div>

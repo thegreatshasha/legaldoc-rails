@@ -1,13 +1,10 @@
 <div>
-<h1>Steps:</h1>
-{{tour}}
-<div ng-if="steps">
-<div ng-repeat="step in steps track by $index">
-  {{step.options.title}}
-  <div ng-if="isCurrentStep(step)">
-  {{isCurrentStep(step)}}
-  I am also the current step
-  </div>
-</div>
-</div>
+	<h1>Steps:</h1>
+	<div ng-if="steps">
+		<ul ng-repeat="step in steps track by $index">
+		  <li ng-class="{current: isCurrentStep(step)}">
+		  	{{step.options.title}}
+		  </li>
+		</ul>
+	</div>
 </div>
