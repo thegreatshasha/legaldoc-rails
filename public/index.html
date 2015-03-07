@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/shepherd/css/shepherd-theme-default.css">
     <link rel="stylesheet" href="bower_components/shepherd/css/shepherd-theme-arrows.css">
-    <link rel="stylesheet" href="bower_components/quill/dist/quill.snow.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel='stylesheet' href='/bower_components/textAngular/src/textAngular.css'>
+    <link rel="stylesheet" href="css/modified.css">
+    
 	
     
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="bower_components/jquery.serializeJSON/jquery.serializejson.min.js"></script>
-    <script type="text/javascript" src="bower_components/shepherd/shepherd.js"></script>
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/shepherd/shepherd.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
     <script src='bower_components/textAngular/dist/textAngular-rangy.min.js'></script>
 	<script src='bower_components/textAngular/dist/textAngular-sanitize.min.js'></script>
 	<script src='bower_components/textAngular/dist/textAngular.min.js'></script>
@@ -67,10 +68,7 @@
 </head>
 
 <body ng-app="myapp">
-<div class="container" style="margin-left: 125px;">
-	<div ng-view></div>
-</div>
-
+<div ng-view></div>
 
 
 
@@ -80,7 +78,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	.config(['$routeProvider',
 	  function($routeProvider) {
 	    $routeProvider.
-	      when('/', {
+	      when('/admin', {
 	        templateUrl: 'templates/main.html',
 	        controller: 'MainController'
 	      }).
@@ -91,6 +89,22 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      when('/download', {
 	      	templateUrl: 'templates/download.html',
 	      	controller: 'DownloadController'
+	      }).
+	      when('/checkout', {
+	        templateUrl: 'templates/pages/checkout.html',
+	        controller: 'MainController'
+	      }).
+	      when('/form', {
+	        templateUrl: 'templates/pages/form.html',
+	        controller: 'CustomerController'
+	      }).
+	      when('/', {
+	        templateUrl: 'templates/pages/homepage.html',
+	        controller: 'MainController'
+	      }).
+	      when('/product', {
+	        templateUrl: 'templates/pages/product.html',
+	        controller: 'MainController'
 	      });
 	  }])
 	.run( function($rootScope, $location) {
@@ -109,12 +123,13 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
         $scope.dataService = dataService;
     })
     .controller("CustomerController", function($scope, $timeout, dataService){
+    	debugger;
     	$scope.dataService = dataService;
     	tour.steps = [];
     	
     	$timeout(function(){
     		tour.start();
-    	} ,1000)
+    	} , 1000)
     })
     .controller("DownloadController", function($scope, dataService){
     	$scope.dataService = dataService;
@@ -129,7 +144,9 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 					var pdf = new jsPDF('p','pt','a4');
 
 					pdf.addHTML($("canvas")[0],function() {
-					    pdf.output('datauri');
+					    pdf.save('agreement.pdf');
+
+					    $('canvas').remove();
 					});
 				}
 		  });     
@@ -216,7 +233,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      scope.selectTemplate = function(template) {
 	      	dataService.html = template.html;
 	      	//if(!scope.$$phase)
-	      	$location.path("/customer");
+	      	$location.path("/form");
 	      }
 	      //debugger; 
 	      $http.get('http://localhost:3000/templates.json').success(function(data){
@@ -252,7 +269,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      scope.$watch(scope.stepLength, function(data, newdata){
 	      	console.log(data);
 	      	scope.steps = tour.steps;
-	      	debugger;
+	      	//debugger;
 	      })
 	    } 
 	  };
@@ -294,7 +311,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 
 	      		var model = $parse(attr.assignData);
 	      		model.assign(scope, element.val());
-	      		debugger;
+	      		//debugger;
 	      	});
 	      })
 

@@ -1,10 +1,7 @@
-<div>
-	<h1>Steps:</h1>
-	<div ng-if="steps">
-		<ul ng-repeat="step in steps track by $index">
-		  <li ng-class="{current: isCurrentStep(step)}">
-		  	{{step.options.title}}
-		  </li>
-		</ul>
-	</div>
+<div ng-if="steps">
+	<ul class="list-group" ng-repeat="step in steps track by $index">
+	  <li class="list-group-item" ng-class="{active: isCurrentStep(step)}">
+	  	{{step.options.title}}
+	  </li>
+	</ul>
 </div>

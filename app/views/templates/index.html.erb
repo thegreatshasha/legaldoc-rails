@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Html</th>
+      <th>Logo Class</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= template.name %></td>
         <td><%= template.html.html_safe %></td>
+        <td><%= template.logo %></td>
         <td><%= link_to 'Show', template %></td>
         <td><%= link_to 'Edit', edit_template_path(template) %></td>
         <td><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,11 +1,8 @@
 <div>
 	<h1>Templates:</h1>
 	<div ng-if="data">
-		<ul ng-repeat="template in data track by $index">
-		  <li>
-		  	<span>{{template.name}}</span>
-		  	<button ng-click="selectTemplate(template)">Choose</button>
-		  </li>
-		</ul>
+		<div ng-repeat="template in data track by $index">
+		  <button ng-click="selectTemplate(template)" class="btn btn-default btn-black"><div class="col-xs-4 col-md-8 col-sm-12 text-left {{template.logo}}">&nbsp;&nbsp;{{template.name}}</div></button>
+		</div>
 	</div>
 </div>
