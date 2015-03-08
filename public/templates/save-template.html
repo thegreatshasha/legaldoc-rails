@@ -1,12 +1,12 @@
 <form>
 	<label for="name"> Template Name</label>
-	<input name="name"/>
+	<input class="form-control" name="name"/>
 
 	<label for="logo"> Template Logo Class</label>
-	<input name="logo"/>
+	<input class="form-control" name="logo"/>
 
 	<label for="html"> Add guider tags</label>
-	<textarea name="html" assign-data="dataService.html" ng-trim="false" style="white-space: pre-wrap;word-wrap: break-word"></textarea>
-
-	<button ng-click="saveTemplate(form)">Save</button>
+	<textarea class="form-control" name="html" assign-data="dataService.html" ng-trim="false" style="white-space: pre-wrap;word-wrap: break-word"></textarea>
+	<br>
+	<button class="btn btn-primary" ng-click="saveTemplate(form)">Save</button>
 </form>

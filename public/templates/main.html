@@ -1,18 +1,83 @@
-<div>
-	    <h2>Template Button</h2>
-
-	    <h3>Step 1: Generate template in gui</h3>
-	    <text-angular ng-model="dataService.html"></text-angular>
-
-	    <h3>Step 2: Add Guider and Variable Tags</h3>
+<header>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header visible-xs">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img alt="" class="img-responsive" src="imgs/logo.png" />
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="row">
+                    <div class="col-sm-2 hidden-xs">
+                        <div class="logo">
+                            <a class="navbar-brand" href="/">
+                                <img width="138" height="38" alt="" class="img-responsive" src="imgs/logo.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-10 col-md-9 pull-left">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="menu-special"><a href="#">About</a>
+                            </li>
+                            <li class="menu-special"><a href="#">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <h2>Template Button</h2>
+	<div class="row">
+		<h3>Step 1: Generate template in gui</h3>
+    	<text-angular ng-model="dataService.html"></text-angular>
+	</div>
+    
+	<div class="row">
+		<h3>Step 2: Add Guider and Variable Tags</h3>
 	    <!-- <textarea assign-data="dataService.html" ng-trim="false" style="white-space: pre-wrap;word-wrap: break-word"></textarea> -->
 	    <!-- <list-templates></list-templates> -->
 	    <save-template></save-template>
 
 	    <h2>Live Preview</h2>
-	    <button onclick="tour.start()">Tour</button>
-	    <a href="/#/customer">Customer Preview</a>
+	    <button onclick="tour.start()" class="btn btn-primary">Tour</button>
+	    <a class="btn btn-primary" href="/#/customer">Customer Preview</a>
 	    <div id="formHTML" compile-html="dataService.html"></div>
 
 	    <div id="testDiv"></div>
+	</div>
+	<div class="row"><br><br></div>
+    
 </div>
+
+<section id="footer">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="list-inline text-uppercase">
+                    <li><a href="#">Support</a>
+                    </li>
+                    <li><a href="#">Faq</a>
+                    </li>
+                    <li><a href="#">Terms of Conditions</a>
+                    </li>
+                    <li><a href="#">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-12">
+                <p>2014 © make a doc.</p>
+            </div>
+        </div>
+    </div>
+</section>
