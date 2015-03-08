@@ -1,0 +1,108 @@
+
+---
+templates:
+  columns:
+  - id
+  - name
+  - html
+  - created_at
+  - updated_at
+  - logo
+  records: 
+  - - 14
+    - Template
+    - <h1>Here you can view all templates</h1>
+    - '2015-03-07 09:38:20.474660'
+    - '2015-03-07 10:03:24.842391'
+    - icon-non-disclosure
+  - - 15
+    - Default
+    - "<guider description=\"First Section\">\r\n    <h1>This hereby declared in the
+      name of party1 <variable name=\"name1\" question=\"Name1?\"></variable></h1>\r\n</guider>\r\n<p>\r\n
+      \   <br/>\r\n</p>\r\n<guider description=\"Second Section\">\r\n    <h2>This
+      hereby declared in the name of party2: <variable name=\"name2\" question=\"name2\"></variable></h2>\r\n</guider>\r\n<p>\r\n
+      \   <br/>\r\n</p>\r\n<guider description=\"Third Section\">\r\n    <h3>This
+      hereby declared in the name of party3: <variable name=\"name3\" question=\"name3\"></variable></h3>\r\n</guider>\r\n<p>\r\n
+      \   <br/>\r\n</p>\r\n<p>This is:</p>"
+    - '2015-03-07 09:41:06.364760'
+    - '2015-03-07 10:08:11.918653'
+    - icon-buy-sell
+  - - 16
+    - Templ3
+    - <h1>Blow it all away</h1>
+    - '2015-03-07 10:08:41.695997'
+    - '2015-03-07 10:08:41.695997'
+    - icon-buy-sell
+  - - 17
+    - Employment Agreement
+    - "<guider description=\"Basic Info\">\r\n<img src=\"http://localhost:3000/rupee.jpg\"
+      />\r\n    <h1>I want to create a new: <variable name=\"name\" question=\"Your
+      name?\"></variable></h1>\r\n</guider>\r\n<p>\r\n    <br/>\r\n</p>\r\n<guider
+      description=\"Advanced Info\">\r\n    <h2>No evil doers will be allowed: <variable
+      name=\"age\" question=\"Your age?\"></variable></h2>\r\n</guider>\r\n<p>\r\n
+      \   <br/>\r\n</p>\r\n<guider description=\"Super Advanced Info\">\r\n    <h3>I
+      think you will be welcome over there: <variable name=\"iq\" question=\"Your
+      iq?\"></variable></h3>\r\n</guider>"
+    - '2015-03-07 10:10:50.504677'
+    - '2015-03-07 12:58:39.782973'
+    - icon-employment
+  - - 18
+    - Partnership Agreement
+    - Partnership Agreement
+    - '2015-03-07 10:11:08.994239'
+    - '2015-03-07 10:11:08.994239'
+    - icon-partnership
+  - - 19
+    - Buy / Sell Agreement
+    - Buy Sell
+    - '2015-03-07 10:11:29.667282'
+    - '2015-03-07 10:11:29.667282'
+    - icon-buy-sell
+  - - 20
+    - Memorandum of Understanding
+    - Memorandumo
+    - '2015-03-07 10:11:53.809849'
+    - '2015-03-07 10:11:53.809849'
+    - icon-MoU
+  - - 21
+    - Make a Will
+    - Make a Will
+    - '2015-03-07 10:12:13.891110'
+    - '2015-03-07 10:12:13.891110'
+    - icon-make-a-will
+  - - 22
+    - Rent / Lease Agreement
+    - Rent
+    - '2015-03-07 10:12:34.541790'
+    - '2015-03-07 10:12:34.541790'
+    - icon-rent-lease
+  - - 23
+    - Evil Template
+    - "<guider description=\"Basic Info\">\r\n\r\n    <h1 style=\"text-align: center;\">To
+      whomesoever it may concern: <variable name=\"name\" question=\"Your name?\"></variable></h1>\r\n</guider>\r\n\r\n<guider
+      description=\"Basic Info\">\r\n\r\n    <h2 style=\"text-align: center;\">This
+      is tale of two <u><variable name=\"name\" question=\"Your name?\"></variable></u>.
+      There is destiny involved, and greatness. <u><variable name=\"name\" question=\"Your
+      name?\"></variable></u> You know you are fucked when you don't even want to
+      do it.</h2>\r\n</guider>\r\n<p>\r\n    <br/>\r\n</p>\r\n<blockquote>\r\n    <blockquote>\r\n
+      \       <blockquote>\r\n            <blockquote>\r\n                <blockquote>\r\n
+      \                   <blockquote>\r\n                        <blockquote>\r\n
+      \                           <blockquote>\r\n                                <blockquote>\r\n
+      \                                   <blockquote>\r\n                                        <blockquote>\r\n
+      \                                           <blockquote>\r\n                                                <blockquote>\r\n
+      \                                                   <blockquote>\r\n                                                        <blockquote>\r\n
+      \                                                           <blockquote>\r\n
+      \                                                               <blockquote>\r\n
+      \                                                                   <p style=\"text-align:
+      center;\">This is not funny</p>\r\n                                                                </blockquote>\r\n
+      \                                                           </blockquote>\r\n
+      \                                                       </blockquote>\r\n                                                    </blockquote>\r\n
+      \                                               </blockquote>\r\n                                            </blockquote>\r\n
+      \                                       </blockquote>\r\n                                    </blockquote>\r\n
+      \                               </blockquote>\r\n                            </blockquote>\r\n
+      \                       </blockquote>\r\n                    </blockquote>\r\n
+      \               </blockquote>\r\n            </blockquote>\r\n        </blockquote>\r\n
+      \   </blockquote>\r\n</blockquote>"
+    - '2015-03-07 13:18:37.818281'
+    - '2015-03-07 13:18:37.818281'
+    - icon-buy-sell

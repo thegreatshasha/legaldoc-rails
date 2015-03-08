@@ -201,3 +201,34 @@ span.spinner { position: absolute; height: 40px; user-select: none; -ms-user-sel
 .list-group-item.active {
   z-index: 0;
 }
+
+/* Angular app styling */
+/*canvas{
+      display: none;
+    }
+*/
+    #formHTML .guiderInput{
+      display: none;
+    }
+
+    .shepherd-text span.variableDisp{
+      display: none;
+    }
+
+    textarea {
+    height:175px;
+    width:900px;
+    border:#999 1px solid;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    white-space: pre-wrap;
+  }
+
+  textarea:focus{
+    color:#000;
+    outline:none;
+    border:#35a5e5 1px solid;
+  }
+
+  .current {
+    background-color: green;
+  }
