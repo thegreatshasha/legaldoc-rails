@@ -34,15 +34,17 @@
   </nav>
 </header>
 
-	<div id="checkout" class="container" style="margin:0px; padding:0px;">
-    	<div class="row" style="margin:10px; padding:0px;">
+	<div id="checkout" class="container" style="margin:0px;width:100%;  padding:0px;">
+    	<div class="row" style="margin:0px 2.5%; padding:0px; width:95%">
         	<!-- List Steps -->
-            <div class="col-lg-3" style="width:30%;">
+            <div class="col" style="width:30%; float:left; background-color:black; min-height:800px;">
                 <tour-steps></tour-steps>
                 <a class="btn btn-default btn-yellow-small" href="/#/checkout">Checkout</a>
             </div>
-
-            <div class="col-lg-9 text-center"style="width:70%;" compile-html="dataService.html"></div>
+            <div class="col" style="width:70%; float:left;padding:20px; background-color:#dddcdc;">
+              <div class="text-center" style=" background-color:#fff; padding-top:10px;" compile-html="dataService.html">                
+              </div>
+            </div>
         </div>
     </div>
 
