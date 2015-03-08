@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.heading1{
+	background-color:#C3A00C; color:white; font-size:24px; font-weight:bold; height:50px; border-radius-top:5px; padding-top:10px; text-align:center
+}
+.templates{
+	 margin-bottom:50px; background-color:#f5f5f5
+}
