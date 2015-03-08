@@ -1,7 +1,7 @@
-<div ng-if="steps">
-	<ul class="list-group" ng-repeat="step in steps track by $index">
-	  <li class="list-group-item" ng-class="{active: isCurrentStep(step)}">
-	  	{{step.options.title}}
+<div ng-if="steps" class="tabbable tabs-left">
+	<ul class="list-group left-tabs nav nav-tabs" >
+	  <li class="" ng-repeat="step in steps track by $index" ng-class="{active: isCurrentStep(step)}" >
+	  	<a href="">{{step.options.title}}</a>
 	  </li>
 	</ul>
 </div>

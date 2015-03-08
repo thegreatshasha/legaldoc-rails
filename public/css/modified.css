@@ -162,9 +162,10 @@ input[type=radio]:not(old):checked +  label > span > span{
 }
 
 /* form page */
-.left-tabs { width: 24%; background: #000; font-size: 18px; color: #fff; }
+.left-tabs { width: 100%; background: #000; font-size: 18px; color: #fff; }
 .tabbable { background: #000; }
 .tabs-left>.nav-tabs { margin-right: 0 !important; border-right: 0 !important; }
+.tabs-left>.nav-tabs>li{width: 100%;}
 .tabs-left>.nav-tabs>li>a, .tabs-right>.nav-tabs>li>a { padding: 30px; border-bottom: 1px solid #484848; margin-bottom: 0 !important; color: #fff; }
 .tabs-left>.nav-tabs>li>a { border-radius: 0 !important; }
 .tabs-left>.nav-tabs .active>a, .tabs-left>.nav-tabs .active>a:hover, .tabs-left>.nav-tabs .active>a:focus { color: #ffd200; }
