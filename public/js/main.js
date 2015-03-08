@@ -72,6 +72,8 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 					    pdf.save('agreement.pdf');
 
 					    $('canvas').remove();
+
+					    window.history.back()
 					});
 				}
 		  });     
@@ -165,7 +167,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      	$location.path("/form");
 	      }
 	      //debugger; 
-	      $http.get('http://localhost:3000/templates.json').success(function(data){
+	      $http.get('/templates.json').success(function(data){
 	      	scope.data = data;
 	      	//$compile(element)(scope);
 	      	//console.log(data);
