@@ -109,12 +109,12 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			  title: attr.description,
 			  scrollTo: true,
 			  text: $el[0],
-			  attachTo: {element: element[0], on: 'right'},
+			  attachTo: {element: element[0], on: 'bottom'},
 			  classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
 			  buttons: [
 			  	{
 			  		text: 'Back',
-			  		classes: 'shepherd-button-example-primary',
+			  		classes: 'shepherd-button-example-primary shepherd-button-back',
 			  		action: function() {
 			  			scope.$apply(function(){
 			  				tour.back();
@@ -123,7 +123,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			  	},
 			    {
 			      text: 'Next',
-			      classes: 'shepherd-button-example-primary',
+			      classes: 'shepherd-button-example-primary shepherd-button-next',
 			      action: function() {
 			      	scope.$apply(function(){
 			      		tour.next();
@@ -143,7 +143,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	replace: true,
 	  	scope: true,
 	  	template: function(element, attr){
-	  		return '<span><span class="guiderInput"><label for="' + attr.name +'">' + attr.question + '</label><input type="text" name="' + attr.name +'" ng-model="dataService.' + attr.name +'"/></span>' + '<span class="variableDisp" ng-bind="dataService.' + attr.name +'"></span></span>';
+	  		return '<span><div class="guiderInput"><label for="' + attr.name +'">' + attr.question + '</label><input type="text" name="' + attr.name +'" ng-model="dataService.' + attr.name +'"/></div>' + '<span class="variableDisp" ng-bind="dataService.' + attr.name +'"></span></span>';
 	  	},
 	  	link: function(scope, element, attr){
 	      //console.log('i am alive!', dataService);

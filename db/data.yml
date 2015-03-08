@@ -76,33 +76,23 @@ templates:
     - '2015-03-07 10:12:34.541790'
     - '2015-03-07 10:12:34.541790'
     - icon-rent-lease
-  - - 23
-    - Evil Template
-    - "<guider description=\"Basic Info\">\r\n\r\n    <h1 style=\"text-align: center;\">To
-      whomesoever it may concern: <variable name=\"name\" question=\"Your name?\"></variable></h1>\r\n</guider>\r\n\r\n<guider
-      description=\"Basic Info\">\r\n\r\n    <h2 style=\"text-align: center;\">This
-      is tale of two <u><variable name=\"name\" question=\"Your name?\"></variable></u>.
-      There is destiny involved, and greatness. <u><variable name=\"name\" question=\"Your
-      name?\"></variable></u> You know you are fucked when you don't even want to
-      do it.</h2>\r\n</guider>\r\n<p>\r\n    <br/>\r\n</p>\r\n<blockquote>\r\n    <blockquote>\r\n
-      \       <blockquote>\r\n            <blockquote>\r\n                <blockquote>\r\n
-      \                   <blockquote>\r\n                        <blockquote>\r\n
-      \                           <blockquote>\r\n                                <blockquote>\r\n
-      \                                   <blockquote>\r\n                                        <blockquote>\r\n
-      \                                           <blockquote>\r\n                                                <blockquote>\r\n
-      \                                                   <blockquote>\r\n                                                        <blockquote>\r\n
-      \                                                           <blockquote>\r\n
-      \                                                               <blockquote>\r\n
-      \                                                                   <p style=\"text-align:
-      center;\">This is not funny</p>\r\n                                                                </blockquote>\r\n
-      \                                                           </blockquote>\r\n
-      \                                                       </blockquote>\r\n                                                    </blockquote>\r\n
-      \                                               </blockquote>\r\n                                            </blockquote>\r\n
-      \                                       </blockquote>\r\n                                    </blockquote>\r\n
-      \                               </blockquote>\r\n                            </blockquote>\r\n
-      \                       </blockquote>\r\n                    </blockquote>\r\n
-      \               </blockquote>\r\n            </blockquote>\r\n        </blockquote>\r\n
-      \   </blockquote>\r\n</blockquote>"
-    - '2015-03-07 13:18:37.818281'
-    - '2015-03-07 13:18:37.818281'
-    - icon-buy-sell
+  - - 24
+    - Non Disclosure Agreement
+    - "<h2 style=\"text-align: center;\"><img src=\"http://localhost:3000/rupee.jpg\"/><br/></h2>\r\n<h2
+      style=\"text-align: center;\">Non Disclosure Agreement</h2>\r\n<guider description=\"Your
+      Location and Date\">\r\n    <p style=\"text-align: center;\">This non disclosure
+      agreement is entered into at\r\n        <u><variable name=\"Location\" question=\"Enter
+      the location agreement was entered into\"></variable></u> on\r\n        <u><variable
+      name=\"Date\" question=\"Enter the date\"></variable></u>\r\n    </p>\r\n</guider>\r\n<guider
+      description=\"Enter Party Details\">\r\n    <p style=\"text-align: center;\">Between</p>\r\n
+      \   <p style=\"text-align: center;\">\r\n        <u><variable name=\"Name\"
+      question=\"Enter name\"></variable></u>, aged,\r\n        <u><variable name=\"Age\"
+      question=\"Enter age\"></variable></u> years, residing at\r\n        <u><variable
+      name=\"Address\" question=\"Where do you live?\"></variable></u> (hereinafter
+      referred to jointly as the &#34;Disclosing Party&#34; which expression shall,
+      unless repugnant to the meaning or context hereof, be deemed to include all
+      successors and permitted assigns) represented herein by ON FIRST\r\n        PART\r\n
+      \   </p>\r\n</guider>"
+    - '2015-03-08 11:03:30.125392'
+    - '2015-03-08 11:08:21.469204'
+    - icon-non-disclosure

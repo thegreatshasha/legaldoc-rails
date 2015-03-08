@@ -162,10 +162,9 @@ input[type=radio]:not(old):checked +  label > span > span{
 }
 
 /* form page */
-.left-tabs { width: 100%; background: #000; font-size: 18px; color: #fff; }
+.left-tabs { width: 24%; background: #000; font-size: 18px; color: #fff; }
 .tabbable { background: #000; }
 .tabs-left>.nav-tabs { margin-right: 0 !important; border-right: 0 !important; }
-.tabs-left>.nav-tabs>li{width: 100%;}
 .tabs-left>.nav-tabs>li>a, .tabs-right>.nav-tabs>li>a { padding: 30px; border-bottom: 1px solid #484848; margin-bottom: 0 !important; color: #fff; }
 .tabs-left>.nav-tabs>li>a { border-radius: 0 !important; }
 .tabs-left>.nav-tabs .active>a, .tabs-left>.nav-tabs .active>a:hover, .tabs-left>.nav-tabs .active>a:focus { color: #ffd200; }
@@ -205,11 +204,7 @@ span.spinner { position: absolute; height: 40px; user-select: none; -ms-user-sel
 .list-group-item.active {
   z-index: 0;
 }
-.navbar{
-  margin: 0px;
-  height: 70px;
-  padding-top: 6px;
-}
+<<<<<<< HEAD
 
 /* Angular app styling */
 /*canvas{
@@ -237,12 +232,14 @@ span.spinner { position: absolute; height: 40px; user-select: none; -ms-user-sel
     outline:none;
     border:#35a5e5 1px solid;
   }
-/*
+
   .current {
     background-color: green;
-  }*/
-
-  /* SHepherd buttons styling */
-  .shepherd-button-back{
-    float: left;
   }
+=======
+.navbar{
+  margin: 0px;
+  height: 70px;
+  padding-top: 6px;
+}
+>>>>>>> dfa93761228adf0ad5f3887013e887fa4c12b604
