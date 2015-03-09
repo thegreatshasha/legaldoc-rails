@@ -38,20 +38,18 @@
 </header>
 
 <div class="container">
-<h1>Listing templates</h1>
+<h1 class="page-title">Listing templates</h1>
 <% @templates.each do |template| %>
-<div class="row templates">
+<div class="row template">
   <div class="heading1" >
-    <%= template.name %>
-    <div class="pull-right">
+    <span class="template-name"><%= template.name %></span>
+    <div class="button-container">
         <span class="btn btn-primary"><%= link_to 'Show', template %></span>
         <span class="btn btn-info"><%= link_to 'Edit', edit_template_path(template) %></span>
         <span class="btn btn-danger"><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' } %></span>&nbsp
     </div>
   </div>
   <div class="panel-body">
-        <%= template.html.html_safe %>
-        <%= template.name %>
         <%= template.html.html_safe %>
         <%= template.logo %>
   </div>
