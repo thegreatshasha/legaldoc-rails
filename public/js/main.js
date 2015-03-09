@@ -105,7 +105,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 				}
 			);
 	      debugger;//Try this out
-	      $el.append();
+	      $el.append(guiderInputs);
 	      $compile($el.contents())(scope);
 	      var index = tour.steps.length + 1;
 	      var lastIndex = $("guider").length;
@@ -132,7 +132,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			      }
 			    },
 	      	'checkout': {
-			      text: 'Fuck Yeah!',
+			      text: 'Finish',
 			      classes: 'shepherd-button-example-primary shepherd-button-finish',
 			      action: function() {
 			      	scope.$apply(function(){
@@ -174,7 +174,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	replace: true,
 	  	scope: true,
 	  	template: function(element, attr){
-	  		return '<span><div class="guiderInput" name="' + attr.name +'"><label for="' + attr.name +'">' + attr.question + '</label><input type="text" name="' + attr.name +'" ng-model="dataService.' + attr.name +'"/></div>' + '<span class="variableDisp" ng-bind="dataService.' + attr.name +'"></span></span>';
+	  		return '<span><div class="guiderInput" name="' + attr.name + '"><label for="' + attr.name +'">' + attr.question + '</label><input type="text" name="' + attr.name +'" ng-model="dataService.' + attr.name +'"/></div>' + '<span class="variableDisp" ng-bind="dataService.' + attr.name +'"></span></span>';
 	  	},
 	  	link: function(scope, element, attr){
 	      //console.log('i am alive!', dataService);
@@ -220,6 +220,10 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 
 	      scope.stepLength = function(){
 	      	return tour.steps.length;
+	      }
+
+	      scope.isCurrentStep = function(step) {
+	      	return step == tour.getCurrentStep();
 	      }
 
 	      scope.$watch(scope.stepLength, function(data, newdata){
