@@ -35,7 +35,8 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	   $rootScope.$watch(function() { 
 	      return $location.path(); 
 	    },
-	    function(a){  
+	    function(a){
+	      tour.cancel();
 	      tour.steps = [];
 	    });
 	})
@@ -47,7 +48,6 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
         $scope.dataService = dataService;
     })
     .controller("CustomerController", function($scope, $timeout, dataService){
-    	debugger;
     	$scope.dataService = dataService;
     	tour.steps = [];
     	
@@ -63,7 +63,6 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	link: function(scope,element,attr){
 	      html2canvas(document.body, {
 				onrendered: function(canvas) {
-					debugger;
 					document.body.appendChild(canvas);
 
 					var pdf = new jsPDF('p','pt','a4');
@@ -86,16 +85,13 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      var parsed = $parse(attr.compileHtml);
 	      function getStringValue() { return (parsed(scope) || '').toString(); }            
 	      scope.$watch(getStringValue, function (value) {
-	      	//console.log(value);
-	      	var $el = $("<div></div>");
-	      	$el.html(value);
-	      	$compile($el.contents())(scope);
-	        element.html($el);       
+	      	element.html(value);
+	      	$compile(element.contents())(scope);     
 	      });       
 	    } 
 	  };
 	}])
-	.directive('guider',['$sce', '$parse', '$compile', '$timeout', function($sce, $parse, $compile, $timeout){
+	.directive('guider',['$sce', '$parse', '$compile', '$location', function($sce, $parse, $compile, $location){
 	  return {
 	  	restrict: 'E',
 	  	scope: true,
@@ -105,16 +101,13 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      // Strip non form tags and compile
 	      $el.append(element.find(".guiderInput"));
 	      $compile($el.contents())(scope);
-	      //console.log(html);
-	      $timeout(function(){
-	      	tour.addStep('myStep' + tour.steps.length, {
-			  title: attr.description,
-			  scrollTo: true,
-			  text: $el[0],
-			  attachTo: {element: element[0], on: 'bottom'},
-			  classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
-			  buttons: [
-			  	{
+	      var index = tour.steps.length + 1;
+	      var lastIndex = $("guider").length;
+
+	      // Checkout hack
+	      var buttons = [];
+	      var buttonObj = {
+	      	'back': {
 			  		text: 'Back',
 			  		classes: 'shepherd-button-example-primary shepherd-button-back',
 			  		action: function() {
@@ -122,8 +115,8 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			  				tour.back();
 			  			})
 			  		}
-			  	},
-			    {
+			},
+	      	'next': {
 			      text: 'Next',
 			      classes: 'shepherd-button-example-primary shepherd-button-next',
 			      action: function() {
@@ -131,10 +124,40 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			      		tour.next();
 			      	});
 			      }
+			    },
+	      	'checkout': {
+			      text: 'Checkout',
+			      classes: 'shepherd-button-example-primary shepherd-button-next',
+			      action: function() {
+			      	scope.$apply(function(){
+			      		$location.path('/checkout');
+			      	});
+			      }
 			    }
-			  ]
-			});
-	      }, 0)
+	      };
+	      
+	      //console.log(html);
+	      switch(index) {
+		      case 1:
+		      	buttons = [buttonObj['next']];
+		      	break;
+		      case lastIndex:
+		      	buttons = [buttonObj['back'], buttonObj['checkout']];
+		      	break;
+		      default:
+		      	buttons = [buttonObj['back'], buttonObj['next']];
+		      	break;
+		  }
+		    
+	      tour.addStep('myStep' + tour.steps.length, {
+			  title: attr.description,
+			  scrollTo: true,
+			  text: $el[0],
+			  attachTo: {element: element[0], on: 'bottom'},
+			  classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
+			  buttons: buttons
+		  });
+	      
 	      
 	    } 
 	  };
@@ -192,23 +215,6 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      scope.stepLength = function(){
 	      	return tour.steps.length;
 	      }
-
-	      scope.isCurrentStep = function(step) {
-	      	console.log('is Current Step Running')
-	      	return step == tour.getCurrentStep();
-	      }
-
-	      scope.getCurrentStep = function() {
-	      	var step = tour.getCurrentStep();
-	      	if(step)
-	      		return step.id
-	      	else
-	      		return null;
-	      }
-
-	      scope.$watch(scope.getCurrentStep, function(a,b){
-	      	debugger;
-	      })
 
 	      scope.$watch(scope.stepLength, function(data, newdata){
 	      	console.log(data);
