@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @template.name %>
-</p>
+<div class="row">
+  <h2>Name:</h2>
+  <div class="panel-body">
+  	<p><%= @template.name %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Logo Class:</strong>
-  <%= @template.logo %>
-</p>
+<div class="row">
+  <h2>Logo Class:</h2>
+  <div class="panel-body">
+  	<p><%= @template.logo %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Html:</strong>
-  <%= @template.html %>
-</p>
-
-<%= link_to 'Edit', edit_template_path(@template) %> |
-<%= link_to 'Back', templates_path %>
+<div class="row">
+  <h2>Html:</h2>
+  <div class="panel-body">
+  <p><%= @template.html %></p>
+  </div>
+</div>
+<br><br>
+<span class="btn btn-primary"><%= link_to 'Edit', edit_template_path(@template) %> </span>
+<span class="btn btn-primary"><%= link_to 'Back', templates_path %></span>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br>
