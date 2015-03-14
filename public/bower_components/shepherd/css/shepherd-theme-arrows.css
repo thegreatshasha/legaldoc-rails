@@ -13,9 +13,9 @@
   max-width: 100%;
   max-height: 100%; }
   .shepherd-element.shepherd-theme-arrows .shepherd-content {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    -moz-border-radius: 0px !important ;
+    -webkit-border-radius: 0px !important ;
+    border-radius: 0px !important ;
     position: relative;
     font-family: inherit;
     background: #fff;
@@ -27,8 +27,8 @@
     -ms-transform: translateZ(0);
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
-    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2)); }
+    /*-webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2)); */}
     .shepherd-element.shepherd-theme-arrows .shepherd-content:before {
       content: "";
       display: block;
@@ -118,7 +118,7 @@
 .shepherd-element.shepherd-theme-arrows.shepherd-element-attached-top.shepherd-element-attached-center.shepherd-has-title .shepherd-content:before, .shepherd-element.shepherd-theme-arrows.shepherd-element-attached-top.shepherd-element-attached-right.shepherd-target-attached-bottom.shepherd-has-title .shepherd-content:before, .shepherd-element.shepherd-theme-arrows.shepherd-element-attached-top.shepherd-element-attached-left.shepherd-target-attached-bottom.shepherd-has-title .shepherd-content:before {
   border-bottom-color: #eee; }
 .shepherd-element.shepherd-theme-arrows.shepherd-has-title .shepherd-content header {
-  background: #eee;
+  background: #eeeded;
   padding: 1em; }
   .shepherd-element.shepherd-theme-arrows.shepherd-has-title .shepherd-content header a.shepherd-cancel-link {
     padding: 0;
@@ -126,14 +126,16 @@
 .shepherd-element.shepherd-theme-arrows.shepherd-has-cancel-link .shepherd-content header h3 {
   float: left; }
 .shepherd-element.shepherd-theme-arrows .shepherd-content {
-  padding: 0; }
+  padding: 0; 
+background-color:#eeeded;
+ }
   .shepherd-element.shepherd-theme-arrows .shepherd-content * {
     font-size: inherit; }
   .shepherd-element.shepherd-theme-arrows .shepherd-content header {
     *zoom: 1;
-    -moz-border-radius: 5px 5px 0 0;
-    -webkit-border-radius: 5px;
-    border-radius: 5px 5px 0 0; }
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0px !important; }
     .shepherd-element.shepherd-theme-arrows .shepherd-content header:after {
       content: "";
       display: table;
@@ -141,7 +143,8 @@
     .shepherd-element.shepherd-theme-arrows .shepherd-content header h3 {
       margin: 0;
       line-height: 1;
-      font-weight: normal; }
+      font-weight: normal;
+      font-weight: bold; }
     .shepherd-element.shepherd-theme-arrows .shepherd-content header a.shepherd-cancel-link {
       float: right;
       text-decoration: none;
@@ -157,7 +160,9 @@
       .shepherd-element.shepherd-theme-arrows .shepherd-content header a.shepherd-cancel-link:hover {
         opacity: 1; }
   .shepherd-element.shepherd-theme-arrows .shepherd-content .shepherd-text {
-    padding: 1em; }
+    padding: 1em;
+    height: 80px;
+     }
     .shepherd-element.shepherd-theme-arrows .shepherd-content .shepherd-text p {
       margin: 0 0 0.5em 0;
       line-height: 1.3em; }
@@ -180,22 +185,32 @@
           *vertical-align: auto;
           *zoom: 1;
           *display: inline;
-          -moz-border-radius: 3px;
-          -webkit-border-radius: 3px;
-          border-radius: 3px;
+          -moz-border-radius: 0px;
+          -webkit-border-radius: 0px;
+          border-radius: 0px;
           cursor: pointer;
           border: 0;
           margin: 0 0.5em 0 0;
           font-family: inherit;
-          text-transform: uppercase;
+          text-tansform: uppercase;
           letter-spacing: 0.1em;
           font-size: 0.8em;
           line-height: 1em;
           padding: 0.75em 2em;
-          background: #3288e6;
-          color: #fff; }
+          color:#08c; 
+          border-radius:14px;
+          border:1.5px solid #ccc; 
+          background-color: #fff;
+        }
+         .shepherd-button :hover{
+          text-decoration: none;
+         }
           .shepherd-element.shepherd-theme-arrows .shepherd-content footer .shepherd-buttons li .shepherd-button.shepherd-button-secondary {
             background: #eee;
             color: #888; }
+         }
         .shepherd-element.shepherd-theme-arrows .shepherd-content footer .shepherd-buttons li:last-child .shepherd-button {
           margin-right: 0; }
+label{
+  font-weight: normal;
+}
