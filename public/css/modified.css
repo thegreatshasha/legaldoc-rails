@@ -51,7 +51,7 @@ section#products { background: url(../imgs/productWrapperBg.jpg) no-repeat; back
 .btn-black-small:active,
 .btn-black-small.active,
 .open > .dropdown-toggle.btn-black-small { color: #1a1a1a; background-color: #ffd200; border-color: #eec400; }
-.btn-yellow-small {	background: #ffd200; border: 1px solid #eec400; font-size: 21px; color: #282828; margin: 16px 0 15px 0px; padding: 15px 20px; width: auto; }
+.btn-yellow-small {	background: #ffd200; border: 1px solid #eec400; font-size: 21px; color: #282828; margin: 10px 30%; padding: 15px 20px; width: auto; }
 .btn-yellow-small:hover,
 .btn-yellow-small:focus,
 .btn-yellow-small.focus,
