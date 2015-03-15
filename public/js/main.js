@@ -3,7 +3,11 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  function($routeProvider) {
 	    $routeProvider.
 	      when('/admin', {
-	        templateUrl: 'templates/main.html',
+	        templateUrl: 'templates/admin.html',
+	        controller: 'MainController'
+	      }).
+	      when('/adminform', {
+	        templateUrl: 'templates/admin-form.html',
 	        controller: 'MainController'
 	      }).
 	      when('/customer', {
@@ -26,6 +30,10 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	        templateUrl: 'templates/pages/homepage.html',
 	        controller: 'MainController'
 	      }).
+	      when('/#', {
+	        templateUrl: 'templates/pages/homepage.html',
+	        controller: 'MainController'
+	      }).
 	      when('/product', {
 	        templateUrl: 'templates/pages/product.html',
 	        controller: 'MainController'
@@ -40,12 +48,69 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      tour.steps = [];
 	    });
 	})
-	.service('dataService', function(){
-		html = "";
+	.service('dataService', ['$location', '$http', '$rootScope', function($location, $http, $rootScope){
+		var parent = this;
+		this.template = {};
+		this.templates = [];
+		this.adminFormPath = "/adminform";
+		this.customerFormPath = "/form";
+		window.d = this;
+
+		this.editTemplate = function (template) {
+			this.template = template;
+			$location.path(this.adminFormPath);
+		}
+
+		this.fetchTemplates = function () {
+			var promise = $http.get('/templates.json').success(function(data){
+				parent.templates = data;
+				//$compile(element)(scope);
+		      	//console.log(data);
+		      	//alert("yoyo");
+		      	//debugger;
+	      	});
+	      	return promise;
+		}
+
+		this.newTemplate = function() {
+			debugger;
+			this.template = {};
+			$location.path(this.adminFormPath);
+		}
+
+		this.deleteTemplate = function(template, $index) {
+			parent.templates.splice($index, 1);
+			$http.delete('/templates/' + template.id +'.json', {'template': template}).success(function(data){
+				alert("Deleted");
+			});
+		}
+
+		this.chooseTemplate = function(template) {
+	      	this.template.html = template.html;
+	      	//if(!scope.$$phase)
+	      	$location.path(this.customerFormPath);
+	    }
+
+	    this.saveTemplate = function() {
+	    	var method = this.template.id ? "put" : "post",
+	    		url = this.template.id ? "/templates/" + this.template.id + ".json" : "/templates.json";
+
+	    	$http[method](url, this.template).success(function(data){
+	    		alert("Success");
+	    	})
+
+	    	// $http.post('/templates.json', template).success(function(data){
+	     //  		alert("Saved Successfully");
+	     //  	});
+	    }
 		//window.dataService = this;
-	})
+	}])
     .controller("MainController", function($scope, dataService) {
         $scope.dataService = dataService;
+
+        $scope.newTemplate = function() {
+        	debugger;
+        }
     })
     .controller("CustomerController", function($scope, $timeout, dataService){
     	$scope.dataService = dataService;
@@ -187,22 +252,43 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	restrict: 'E',
 	  	replace: true,
 	  	scope: true,
-	  	templateUrl: 'templates/list-templates.html',
-	  	link: function(scope, element, attr){
+	  	link: function(scope, element, attrs){
 	      //console.log('i am alive!', dataService);
-	      scope.selectTemplate = function(template) {
-	      	dataService.html = template.html;
-	      	//if(!scope.$$phase)
-	      	$location.path("/form");
-	      }
-	      //debugger; 
-	      $http.get('/templates.json').success(function(data){
-	      	scope.data = data;
-	      	//$compile(element)(scope);
-	      	//console.log(data);
-	      	//alert("yoyo");
-	      	//debugger;
-	      })
+	      // scope.selectTemplate = function(template) {
+	      // 	dataService.html = template.html;
+	      // 	//if(!scope.$$phase)
+	      // 	$location.path("/form");
+	      // }
+	      //debugger;
+	      	scope.dataService = dataService;
+	      	dataService.fetchTemplates();
+	      
+	    },
+	    templateUrl: function(element, attrs) {
+	    	return 'templates/' + attrs.type + '-list-templates.html';
+	    }
+	  };
+	}])
+	.directive('chooseTemplate', ['$location', 'dataService', function($location, dataService){
+	  return {
+	  	restrict: 'E',
+	  	replace: true,
+	  	scope: true,
+	  	templateUrl: 'templates/choose-template.html',
+	  	link: function(scope, element, attr){
+	  		scope.dataService = dataService;
+	    } 
+	  };
+	}])
+	.directive('editTemplate', ['$location', 'dataService', function($location, dataService){
+	  return {
+	  	restrict: 'E',
+	  	replace: true,
+	  	scope: true,
+	  	templateUrl: 'templates/edit-template.html',
+	  	link: function(scope, element, attr){
+	  		scope.dataService = dataService;
+	  		debugger;
 	    } 
 	  };
 	}])
@@ -248,9 +334,6 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      	var formData = element.serializeJSON();
 	      	//debugger;
 	      	//debugger;
-	      	$http.post('/templates.json', formData).success(function(data){
-	      		alert("Saved Successfully");
-	      	});
 	      }
 	    } 
 	  };

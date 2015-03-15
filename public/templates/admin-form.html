@@ -1,0 +1,28 @@
+<ng-include src="'templates/header.html'"></ng-include>
+
+<div class="container">
+    <h2>Template Create</h2>
+	<div class="row">
+		<h3>Step 1: Generate template in gui</h3>
+    	<text-angular ng-model="dataService.template.html" ta-unsafe-sanitizer="true"></text-angular>
+	</div>
+    
+	<div class="row">
+		<h3>Step 2: Add Guider and Variable Tags</h3>
+	    <!-- <textarea assign-data="dataService.html" ng-trim="false" style="white-space: pre-wrap;word-wrap: break-word"></textarea> -->
+	    <!-- <list-templates></list-templates> -->
+	    <save-template></save-template>
+        <a class="btn btn-primary" href="/#/admin">Back to admin</a>
+
+	    <h2>Live Preview</h2>
+	    <button onclick="tour.start()" class="btn btn-primary">Tour</button>
+	    <a class="btn btn-primary" href="/#/customer">Customer Preview</a>
+	    <div id="formHTML" compile-html="dataService.template.html"></div>
+
+	    <div id="testDiv"></div>
+	</div>
+	<div class="row"><br><br></div>
+    
+</div>
+
+<ng-include src="'templates/footer.html'"></ng-include>

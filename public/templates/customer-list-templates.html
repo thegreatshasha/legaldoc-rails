@@ -1,0 +1,5 @@
+<div ng-if="dataService.templates">
+	<span ng-repeat="template in dataService.templates track by $index">
+		<choose-template></choose-template>
+	</span>
+</div>
