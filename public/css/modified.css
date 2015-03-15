@@ -246,3 +246,7 @@ span.spinner { position: absolute; height: 40px; user-select: none; -ms-user-sel
   .shepherd-button-back{
     float: left;
   }
+
+  .guiderInput input{
+    margin-left: 10px;
+  }

@@ -97,7 +97,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	scope: true,
 	    link: function(scope, element, attr) {
 	      //debugger;
-	      var $el = $("<form></form>");
+	      var $el = $("<form><p style='text-align: center;'></p></form>");
 	      // Strip non form tags and compile
 	      guiderInputs = element.find(".guiderInput")
 	      guiderInputs = _.uniq(guiderInputs, function(data) {

@@ -5,7 +5,8 @@
 
 .shepherd-element {
   position: absolute;
-  display: none; }
+  display: none;
+  width: 55%; }
   .shepherd-element.shepherd-open {
     display: block; }
 
