@@ -61,16 +61,16 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			$location.path(this.adminFormPath);
 		}
 
-		this.cleanTemplate = function() {
+		this.cleanTemplate = function(str) {
 			//return "<h1>This shouldn't be stuck</h1>"
-			return parent.template.html.replace(/[\n\r]/g, '');
+			return str.replace(/[\n\r]/g, '');
 		}
 
 		this.downloadPdf = function(){
 			$http({
 			    url: '/templates/download.pdf',
 			    method: "POST",
-			    data: {html: parent.cleanTemplate()}, //this is your json data string
+			    data: {html: parent.cleanTemplate(parent.template.compiledHtml)}, //this is your json data string
 			    headers: {
 			       'Content-type': 'application/json'
 			    },
@@ -109,7 +109,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 		}
 
 		this.chooseTemplate = function(template) {
-	      	this.template.html = template.html;
+	      	this.template = template;
 	      	//if(!scope.$$phase)
 	      	$location.path(this.customerFormPath);
 	    }
@@ -146,14 +146,16 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
     .controller("DownloadController", function($scope, dataService){
     	$scope.dataService = dataService;
     })
-	.directive('compileHtml',['$sce', '$parse', '$compile', function($sce, $parse, $compile){
+	.directive('compileHtml',['$sce', '$parse', '$compile', 'dataService', function($sce, $parse, $compile, dataService){
 	  return {
+	  	//TODO: Remove hardcoded dependency on dataService and make it declarative
 	    link: function(scope,element,attr){
 	      var parsed = $parse(attr.compileHtml);
 	      function getStringValue() { return (parsed(scope) || '').toString(); }            
 	      scope.$watch(getStringValue, function (value) {
 	      	element.html(value);
-	      	$compile(element.contents())(scope);     
+	      	$compile(element.contents())(scope); 
+	      	dataService.template.compiledHtml = element.html();    
 	      });       
 	    } 
 	  };
