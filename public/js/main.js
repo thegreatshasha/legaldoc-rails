@@ -154,11 +154,23 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      function getStringValue() { return (parsed(scope) || '').toString(); }            
 	      scope.$watch(getStringValue, function (value) {
 	      	element.html(value);
-	      	$compile(element.contents())(scope); 
-	      	dataService.template.compiledHtml = element.html();    
+	      	$compile(element.contents())(scope);
 	      });       
 	    } 
 	  };
+	}])
+	.directive('watchHtml', [function(){
+		return {
+			restrict: 'A',
+			scope: { html: '=watchHtml' },
+			link: function(scope, element, attr) {
+				scope.$watch(function(){
+					return element.html();
+				}, function(newHtml){
+					scope.html = newHtml;
+				})
+			}
+		}
 	}])
 	.directive('guider',['$sce', '$parse', '$compile', '$location', function($sce, $parse, $compile, $location){
 	  return {
