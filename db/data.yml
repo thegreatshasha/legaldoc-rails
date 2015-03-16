@@ -9,90 +9,348 @@ templates:
   - updated_at
   - logo
   records: 
-  - - 14
-    - Template
-    - <h1>Here you can view all templates</h1>
-    - '2015-03-07 09:38:20.474660'
-    - '2015-03-07 10:03:24.842391'
+  - - 25
+    - Non Disclosure Template
+    - "<title></title>\r\n<p style=\"text-align: center;\">\r\n<img src=\"http://localhost:3000/rupee.jpg\"></p>\r\n<h1
+      style=\"text-align: center;\"><b>Non Disclosure Agreement</b></h1>\r\n<p class=\"p2\"
+      style=\"text-align: center;\">This non disclosure agreement is entered into
+      at on</p>\r\n<guider description=\"Party1's details\">\r\n    <p class=\"p2\"
+      style=\"text-align: center;\">Between</p>\r\n    <p class=\"p2\" style=\"text-align:
+      center;\">\r\n        <variable name=\"party1name\" question=\"Enter party1's
+      name\" />, aged\r\n        <variable name=\"party1age\" question=\"Enter party1's
+      age\" />, years, residing at\r\n        <variable name=\"party1address\" question=\"Enter
+      party1's address\">(hereinafter referred to jointly as the &#34;Disclosing Party&#34;
+      which expression shall, unless repugnant to the meaning or context hereof, be
+      deemed to include all successors and permitted assigns) represented herein by
+      ON FIRST PART</p>\r\n</guider>\r\n<p class=\"p2\" style=\"text-align: center;\">\r\n
+      \   <br/>\r\n</p>\r\n<guider description=\"Party2's details\">\r\n    <p class=\"p2\"
+      style=\"text-align: center;\">Between</p>\r\n    <p class=\"p2\" style=\"text-align:
+      center;\">\r\n        <variable name=\"party2name\" question=\"Enter party2's
+      name\" />, aged\r\n        <variable name=\"party2age\" question=\"Enter party2's
+      age\" />, years, residing at\r\n        <variable name=\"party2address\" question=\"Enter
+      party2's address\">(hereinafter referred to jointly as the &#34;Disclosing Party&#34;
+      which expression shall, unless repugnant to the meaning or context hereof, be
+      deemed to include all successors and permitted assigns) represented herein by
+      ON FIRST PART</p>\r\n    <p class=\"p3\" style=\"text-align: center;\">\r\n
+      \       <br/>\r\n    </p>\r\n</guider>\r\n<p class=\"p4\" style=\"text-align:
+      center;\">The Party of First and the Second Part are individually referred to
+      as a “<b>First Party</b>”, “<b>Second Party</b>” respectively and collectively
+      referred to as “<b>Parties</b>”.</p>\r\n<p class=\"p5\" style=\"text-align:
+      center;\"><b><br/></b>\r\n</p>\r\n<p class=\"p5\" style=\"text-align: center;\"><b>WHEREAS </b>during
+      the course of interaction between the parties, the Second Party will be exposed
+      to confidential information and sensitive data shared by the First Party of
+      various types, and the First Party is desirous of maintaining the confidentiality\r\n
+      \   of data shared after the legal relation between the parties has drawn to
+      a close, either as a result of Termination or otherwise.</p>\r\n<p class=\"p5\"
+      style=\"text-align: center;\"><span class=\"s1\"><b><br/></b></span>\r\n</p>\r\n<p
+      class=\"p5\" style=\"text-align: center;\"><span class=\"s1\"><b>CONFIDENTIALITY
+      OF ALL DATA SHARED</b></span>\r\n</p>\r\n<p class=\"p2\" style=\"text-align:
+      center;\">Therefore, this sensitive information, in consideration of the mutual
+      promises and covenants contained in this Agreement, and other good and valuable
+      consideration, the receipt and sufficiency of which is hereby acknowledged,
+      the parties hereto agree\r\n    as follows:</p>\r\n<p class=\"p3\" style=\"text-align:
+      center;\">\r\n    <br/>\r\n</p>\r\n<p class=\"p5\" style=\"text-align: center;\"><b>WHEREAS:</b>\r\n</p>\r\n<p
+      class=\"p6\" style=\"text-align: center;\">()</p>\r\n<p class=\"p6\" style=\"text-align:
+      center;\">The Parties intend to establish a Business Relationship between them.
+      In the course of suchinteraction during the relationship, it is anticipated
+      that the First Party may disclose or deliver to the other certain or some of his trade
+      secrets or confidential\r\n    or proprietary information, for the purpose of
+      enabling the parties to interact productively (<i>hereinafter referred to as
+      &#34;the Purpose&#34;).</i>\r\n</p>\r\n<p class=\"p7\" style=\"text-align: center;\">()</p>\r\n<p
+      class=\"p8\" style=\"text-align: center;\">\r\n    <br/>\r\n</p>\r\n<p class=\"p7\"
+      style=\"text-align: center;\">\r\n    <br/>\r\n</p>\r\n<p class=\"p7\" style=\"text-align:
+      center;\">In <b>order</b> to proceed with the Purpose, the Parties have agreed
+      to exchange certain Confidential Information (hereinafter defined) concerning
+      and relating the Purpose and have agreed to provide and to accept such Confidential
+      Information on a strictly\r\n    confidential basis and on the terms and conditions
+      set out below.</p>"
+    - '2015-03-09 17:37:58.786319'
+    - '2015-03-15 13:35:29.181487'
     - icon-non-disclosure
-  - - 15
-    - Default
-    - "<guider description=\"First Section\">\r\n    <h1>This hereby declared in the
-      name of party1 <variable name=\"name1\" question=\"Name1?\"></variable></h1>\r\n</guider>\r\n<p>\r\n
-      \   <br/>\r\n</p>\r\n<guider description=\"Second Section\">\r\n    <h2>This
-      hereby declared in the name of party2: <variable name=\"name2\" question=\"name2\"></variable></h2>\r\n</guider>\r\n<p>\r\n
-      \   <br/>\r\n</p>\r\n<guider description=\"Third Section\">\r\n    <h3>This
-      hereby declared in the name of party3: <variable name=\"name3\" question=\"name3\"></variable></h3>\r\n</guider>\r\n<p>\r\n
-      \   <br/>\r\n</p>\r\n<p>This is:</p>"
-    - '2015-03-07 09:41:06.364760'
-    - '2015-03-07 10:08:11.918653'
-    - icon-buy-sell
-  - - 16
-    - Templ3
-    - <h1>Blow it all away</h1>
-    - '2015-03-07 10:08:41.695997'
-    - '2015-03-07 10:08:41.695997'
-    - icon-buy-sell
-  - - 17
-    - Employment Agreement
-    - "<guider description=\"Basic Info\">\r\n<img src=\"http://localhost:3000/rupee.jpg\"
-      />\r\n    <h1>I want to create a new: <variable name=\"name\" question=\"Your
-      name?\"></variable></h1>\r\n</guider>\r\n<p>\r\n    <br/>\r\n</p>\r\n<guider
-      description=\"Advanced Info\">\r\n    <h2>No evil doers will be allowed: <variable
-      name=\"age\" question=\"Your age?\"></variable></h2>\r\n</guider>\r\n<p>\r\n
-      \   <br/>\r\n</p>\r\n<guider description=\"Super Advanced Info\">\r\n    <h3>I
-      think you will be welcome over there: <variable name=\"iq\" question=\"Your
-      iq?\"></variable></h3>\r\n</guider>"
-    - '2015-03-07 10:10:50.504677'
-    - '2015-03-07 12:58:39.782973'
-    - icon-employment
-  - - 18
-    - Partnership Agreement
-    - Partnership Agreement
-    - '2015-03-07 10:11:08.994239'
-    - '2015-03-07 10:11:08.994239'
-    - icon-partnership
-  - - 19
-    - Buy / Sell Agreement
-    - Buy Sell
-    - '2015-03-07 10:11:29.667282'
-    - '2015-03-07 10:11:29.667282'
-    - icon-buy-sell
-  - - 20
-    - Memorandum of Understanding
-    - Memorandumo
-    - '2015-03-07 10:11:53.809849'
-    - '2015-03-07 10:11:53.809849'
-    - icon-MoU
-  - - 21
-    - Make a Will
-    - Make a Will
-    - '2015-03-07 10:12:13.891110'
-    - '2015-03-07 10:12:13.891110'
-    - icon-make-a-will
-  - - 22
-    - Rent / Lease Agreement
-    - Rent
-    - '2015-03-07 10:12:34.541790'
-    - '2015-03-07 10:12:34.541790'
-    - icon-rent-lease
-  - - 24
-    - Non Disclosure Agreement
-    - "<h2 style=\"text-align: center;\"><img src=\"http://localhost:3000/rupee.jpg\"/><br/></h2>\r\n<h2
-      style=\"text-align: center;\">Non Disclosure Agreement</h2>\r\n<guider description=\"Your
-      Location and Date\">\r\n    <p style=\"text-align: center;\">This non disclosure
-      agreement is entered into at\r\n        <u><variable name=\"Location\" question=\"Enter
-      the location agreement was entered into\"></variable></u> on\r\n        <u><variable
-      name=\"Date\" question=\"Enter the date\"></variable></u>\r\n    </p>\r\n</guider>\r\n<guider
-      description=\"Enter Party Details\">\r\n    <p style=\"text-align: center;\">Between</p>\r\n
-      \   <p style=\"text-align: center;\">\r\n        <u><variable name=\"Name\"
-      question=\"Enter name\"></variable></u>, aged,\r\n        <u><variable name=\"Age\"
-      question=\"Enter age\"></variable></u> years, residing at\r\n        <u><variable
-      name=\"Address\" question=\"Where do you live?\"></variable></u> (hereinafter
-      referred to jointly as the &#34;Disclosing Party&#34; which expression shall,
-      unless repugnant to the meaning or context hereof, be deemed to include all
-      successors and permitted assigns) represented herein by ON FIRST\r\n        PART\r\n
-      \   </p>\r\n</guider>"
-    - '2015-03-08 11:03:30.125392'
-    - '2015-03-08 11:08:21.469204'
+  - - 26
+    - Nda2
+    - "<title></title>\r\n<p style=\"text-align: center;\">\r\n    <img src=\"http://localhost:3000/rupee.jpg\">\r\n</p>\r\n<h1
+      style=\"text-align: center;\"><b>Non Disclosure Agreement2</b></h1>\r\n<p class=\"p2\"
+      style=\"text-align: center;\">This non disclosure agreement is entered into
+      at&nbsp;on</p>\r\n<guider description=\"Party1's details\">\r\n    <p class=\"p2\"
+      style=\"text-align: center;\">Between</p>\r\n    <p class=\"p2\" style=\"text-align:
+      center;\">\r\n        <variable name=\"party1name\" question=\"Enter party1's
+      name\"></variable>, aged\r\n        <variable name=\"party1age\" question=\"Enter
+      party1's age\"></variable>,&nbsp;years, residing at\r\n        <variable name=\"party1address\"
+      question=\"Enter party1's address\">(hereinafter referred to jointly as the
+      \"Disclosing Party\" which expression shall, unless repugnant to the meaning
+      or context hereof, be deemed to include all successors and permitted assigns)
+      represented herein by ON FIRST PART</variable>\r\n    </p>\r\n</guider>\r\n<p
+      class=\"p2\" style=\"text-align: center;\">\r\n    <br>\r\n</p>\r\n<guider description=\"Party2's
+      details\">\r\n    <p class=\"p2\" style=\"text-align: center;\">Between</p>\r\n
+      \   <p class=\"p2\" style=\"text-align: center;\">\r\n        <variable name=\"party2name\"
+      question=\"Enter party2's name\"></variable>, aged\r\n        <variable name=\"party2age\"
+      question=\"Enter party2's age\"></variable>,&nbsp;years, residing at\r\n        <variable
+      name=\"party2address\" question=\"Enter party2's address\">(hereinafter referred
+      to jointly as the \"Disclosing Party\" which expression shall, unless repugnant
+      to the meaning or context hereof, be deemed to include all successors and permitted
+      assigns) represented herein by ON FIRST PART</variable>\r\n    </p>\r\n    <p
+      class=\"p3\" style=\"text-align: center;\">\r\n        <br>\r\n    </p>\r\n</guider>\r\n<p
+      class=\"p4\" style=\"text-align: center;\">The Party of First and the Second
+      Part are individually referred to as a “<b>First&nbsp;Party</b>”, “<b>Second
+      Party</b>”&nbsp;respectively&nbsp;and collectively referred to as “<b>Parties</b>”.</p>\r\n<p
+      class=\"p5\" style=\"text-align: center;\"><b><br></b>\r\n</p>\r\n<p class=\"p5\"
+      style=\"text-align: center;\"><b>WHEREAS&nbsp;</b>during the course of&nbsp;interaction&nbsp;between&nbsp;the&nbsp;parties,
+      the&nbsp;Second Party will be exposed to confidential information and sensitive
+      data shared by the First Party&nbsp;of various&nbsp;types, and the First Party\r\n
+      \   is desirous of maintaining the confidentiality of data shared after the
+      legal relation between the parties has drawn to a close, either as a result
+      of Termination or otherwise.</p>\r\n<p class=\"p5\" style=\"text-align: center;\"><span
+      class=\"s1\"><b><br></b></span>\r\n</p>\r\n<p class=\"p5\" style=\"text-align:
+      center;\"><span class=\"s1\"><b>CONFIDENTIALITY OF ALL DATA SHARED</b></span>\r\n</p>\r\n<p
+      class=\"p2\" style=\"text-align: center;\">Therefore,&nbsp;this sensitive information,&nbsp;in
+      consideration of the mutual promises and covenants contained in this Agreement,
+      and other good and valuable consideration, the receipt and sufficiency of which
+      is hereby acknowledged, the parties hereto\r\n    agree as follows:</p>\r\n<p
+      class=\"p3\" style=\"text-align: center;\">\r\n    <br>\r\n</p>\r\n<p class=\"p5\"
+      style=\"text-align: center;\"><b>WHEREAS:</b>\r\n</p>\r\n<p class=\"p6\" style=\"text-align:
+      center;\">()</p>\r\n<p class=\"p6\" style=\"text-align: center;\">The Parties
+      intend to&nbsp;establish&nbsp;a Business Relationship&nbsp;between&nbsp;them.
+      In the course of suchinteraction during the relationship, it is anticipated
+      that&nbsp;the First&nbsp;Party may disclose or deliver to the other certain
+      or some of&nbsp;his&nbsp;trade\r\n    secrets or confidential or proprietary
+      information, for the purpose of enabling the&nbsp;parties to interact productively&nbsp;(<i>hereinafter
+      referred to as \"the Purpose\").</i>\r\n</p>\r\n<p class=\"p7\" style=\"text-align:
+      center;\">()</p>\r\n<p class=\"p8\" style=\"text-align: center;\">\r\n    <br>\r\n</p>\r\n<p
+      class=\"p7\" style=\"text-align: center;\">\r\n    <br>\r\n</p>\r\n<p class=\"p7\"
+      style=\"text-align: center;\">In <b>order</b> to proceed with the Purpose, the
+      Parties have agreed to exchange certain Confidential Information (hereinafter
+      defined) concerning and relating the Purpose and have agreed to provide and
+      to accept such Confidential Information on a strictly\r\n    confidential basis
+      and on the terms and conditions set out below.</p>"
+    - '2015-03-14 16:07:53.985062'
+    - '2015-03-14 16:07:53.985062'
+    - icon-non-disclosure
+  - - 29
+    - NDA Final
+    - |-
+      <p>
+          <title></title>
+      </p>
+      <h2><img src="http://localhost:3000/rupee.jpg" style=""><br></h2>
+      <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question="a"></variable><variable name="party2name" question="b"></variable></h2>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p1">This Non-Disclosure Agreement is entered into at
+          <variable name="place" question="Enter place"></variable> on
+          <variable name="date" question="Enter your date"></variable>
+      </p>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p1"><b>BETWEEN</b>
+      </p>
+      <p class="p2">
+          <br>
+      </p>
+      <guider description="party1details">
+          <p class="p1">
+              <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
+              <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
+              <variable name="party1age" question="Enter party1 age"></variable> years, residing at
+              <variable name="party1address" question="Enter party1 registered address"></variable>] (hereinafter referred to as the "Disclosing Party" OR “First Party” which expression shall, unless repugnant to the meaning or context hereof, be deemed to include all successors and permitted assigns) represented herein by [FOR COMPANIES
+              <variable name="party1name" question="Enter party1 representative?"></variable>] [FOR INDIVIDUALS
+              <variable name="party1name" question="Enter party1 name?"></variable>]; OF THE FIRST PART
+          </p>
+          <p class="p2">
+              <br>
+          </p>
+      </guider>
+      <p class="p1">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AND</p>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p1">
+          <guider description="Party2 details">
+              <variable name="party2name" question="Enter party2 name"></variable>, [FOR COMPANIES having registered office address at {
+              <variable name="party2registeredaddress" question="Enter party2 registered address"></variable>] [FOR INDIVIDUALS aged
+              <variable name="party2age" question="Enter party2age"></variable> years, residing at
+              <variable name="party2residingaddress" question="Enter party2's residing office address"></variable>] which expression shall, unless repugnant to the meaning or context hereof, be deemed to include all successors and permitted assigns) represented herein by [FOR COMPANIES {Party 2 Representative}] [FOR INDIVIDUALS {Party 2 Name}];
+              OF THE SECOND PART
+          </guider>
+      </p>
+      <p class="p1">
+          <br>
+      </p>
+      <title></title>
+      <p class="p1">The Party of First and the Second Part are individually referred to as a “<b>First Party</b>”, “<b>Second Party</b>” respectively and collectively referred to as “<b>Parties</b>”.</p>
+      <p class="p1"><b>WHEREAS </b>during the course of interaction between the parties, the Second Party will be exposed to confidential information and sensitive data shared by the First Party of various types, and the First Party is desirous of maintaining the confidentiality
+          of data shared after the legal relation between the parties has drawn to a close, either as a result of Termination or otherwise. &nbsp;</p>
+      <p class="p1"><b>CONFIDENTIALITY OF ALL DATA SHARED</b>
+      </p>
+      <p class="p1">Therefore, this sensitive information, in consideration of the mutual promises and covenants contained in this Agreement, and other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree
+          as follows:</p>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p1"><b>WHEREAS:&nbsp;</b>
+      </p>
+      <ol class="ol1">
+          <li class="li3">The Parties intend to establish a Business Relationship between them. In the course of such interaction during the relationship, it is anticipated that the First Party may disclose or deliver to the other certain or some of his trade secrets or confidential
+              or proprietary information, for the purpose of enabling the parties to interact productively (<i>hereinafter referred to as "the Purpose").</i>
+          </li>
+          <li class="li3">In order to proceed with the Purpose, the Parties have agreed to exchange certain Confidential Information (hereinafter defined) concerning and relating the Purpose and have agreed to provide and to accept such Confidential Information on a strictly
+              confidential basis and on the terms and conditions set out below.</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p1"><b>NOW, THEREFORE, THIS AGREEMENT WITNESSETH AND IT IS HEREBY AGREED BY AND BETWEEN THE PARTIES HERETO AS FOLLOWS:&nbsp;</b>
+      </p>
+      <ol class="ol1">
+          <li class="li3"><b>CONFIDENTIAL INFORMATION</b>: ‘Confidential Information’ means any data or information that is proprietary to the Disclosing Party and not generally known to the public, whether in tangible or intangible form, whenever and however disclosed, including
+              but not limited to:&nbsp;</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <ol class="ol1">
+          <li class="li3">Any information related to the missions or objectives of the Company not publicly disclosed on a forum like the website of the Company or widely distributed marketing material</li>
+          <li class="li3">Details regarding the business model and any strategies to achieve the mission of the First Party;</li>
+          <li class="li3">Any information not generally available to the public relating to the products developed or to be developed by the First Party</li>
+          <li class="li3">Details regarding the personnel, human resources, investments, assets and internal affairs of the First Party</li>
+          <li class="li3">Discussions engaged in with any individual or board in a position to take decisions for the First Party where such discussions could reveal any information relevant to the internal affairs of the First Party</li>
+          <li class="li3">Data or mock-ups related to the User Experience in any software product or website which the First Party is involved</li>
+      </ol>
+      <ol class="ol1">
+          <li class="li3">Any marketing strategies, plans, financial information or projections, operations, sales estimates, business plans and performance results relating to the past, present or future business activities of the First Party</li>
+          <li class="li3">Customer, vendor and supplier lists of the First Party;</li>
+          <li class="li3">Any scientific or technical information, invention, design, process, procedure, formula, improvement, technology or method;&nbsp;</li>
+          <li class="li3">Any concepts, reports, data, know-how, work-in-progress, designs, development tools, installation details, specifications, computer software, source code, object code, flow charts, databases, inventions, information and trade secrets; and&nbsp;</li>
+          <li class="li3">Any other information that should reasonably be recognized as confidential information of the Disclosing Party.&nbsp;</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p1">Confidential Information need not be novel, unique, patentable, copyrightable or constitute a trade secret in order to be designated Confidential Information. The Receiving Party acknowledges that the Confidential Information is proprietary to the Disclosing
+          Party, has been developed and obtained through great efforts by the Disclosing Party and that Disclosing Party regards all of its Confidential Information as trade secrets.</p>
+      <p class="p1">The Receiving Party shall use the Confidential Information solely for and in connection with the Purpose for which it has been shared with the First Party. That purpose may not be disclosed upfront and shall be construed to be the purpose reasonably associated
+          with the task or responsibility entrusted to the Second Party by the First Party</p>
+      <p class="p1">Notwithstanding any other provision of this Agreement, the Parties acknowledge that Confidential Information shall not include any information that:</p>
+      <ol class="ol1">
+          <li class="li3">is or becomes legally and publicly available without breach of this Agreement by the Receiving Party;</li>
+          <li class="li3">was rightfully in the possession of the Receiving Party without any obligation of confidentiality&nbsp;</li>
+          <li class="li3">is disclosed or is required to be disclosed under any relevant law, regulation or order of court, provided the Disclosing Party is given prompt notice of such requirement or such order and (where possible) provided the opportunity to contest it, and
+              the scope of such disclosure is limited to the extent possible; or</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <ol class="ol1">
+          <li class="li3"><b>NON-DISCLOSURE:</b>
+          </li>
+      </ol>
+      <ol class="ol1">
+          <li class="li3">The Receiving Party shall use the Confidential Information only for the Purpose and not disclose any or part or summary or extract of the Confidential Information to any third party, including the clients of the Disclosing Party, without the Disclosing
+              Party’s prior written consent, which prior consent the Disclosing Party may refuse to give without assigning any reasons.&nbsp;</li>
+          <li class="li3">The Receiving Party shall hold and keep in strictest confidence any and all Confidential Information and shall treat the Confidential Information with at least the same degree of care and protection as it would treat its own Confidential Information.</li>
+          <li class="li3">The Receiving Party shall not copy or reproduce in any way (including without limitation, store in any computer or electronic system) any Confidential Information or any documents containing Confidential Information without the Disclosing Party’s
+              prior written consent. The Receiving Party shall immediately upon request by the Disclosing Party deliver to the Disclosing Party all Confidential Information disclosed to the Receiving Party, including all copies (if any) made in terms of these.</li>
+          <li class="li3">The Receiving Party shall not commercially or otherwise use or disclose any Confidential Information or any materials derived therefrom to any other person or entity other than persons in the direct employment of the Receiving Party who have a need
+              to have access to and knowledge of the Confidential Information solely for the Purpose as defined above and such persons are under similar obligation of confidentiality and non-disclosure as these presents.&nbsp;</li>
+          <li class="li3">The Receiving Party may not disclose Confidential Information to Consultant(s)/Third parties under any circumstances regardless of whether the consultant/third party has executed a Non-Disclosure Agreement with the Disclosing Party.&nbsp;</li>
+          <li class="li3">The Receiving Party agrees to notify the Disclosing Party immediately if it learns of any use or disclosure of the Disclosing Party's Confidential Information in violation of the terms of this Agreement.</li>
+          <li class="li3">The Receiving Party further acknowledges and agrees that no representation or warranty, express or implied is or will be made, and no responsibility or liability is or will be accepted by the Disclosing Party, or by any of the company’s respective
+              directors, officers, employees, agents or advisers, as to, or in relation to, the accuracy of completeness of any Confidential Information made available to the Receiving Party or its advisers; it is responsible for making its own evaluation of
+              such Confidential Information.</li>
+          <li class="li3">During the term of this agreement, the Second Party may use the association with the First Party only towards the purposes envisaged under their business association. &nbsp;</li>
+          <li class="li3">The Receiving party hereby acknowledges, understands and agrees that they shall not approach the clients of the First Party or the company in any manner even where the Receiving Party has delivered a product or a service on behalf of the Disclosing
+              Party, or for an existing project or for any future projects.&nbsp;</li>
+      </ol>
+      <ol class="ol1">
+          <li class="li3"><b>PUBLICATIONS: </b>The Receiving Party shall not make news releases, public announcements, give interviews, issue or publish advertisements or publicize in any other manner whatsoever in connection with this Agreement, the contents / provisions
+              thereof, other information relating to this Agreement, the Purpose, the Confidential Information or other matter of this Agreement, without the prior written approval of the First Party. The Receiving Party shall further not use any photographs
+              / video/ other materials belonging or related to the First Party in promotional content through electronic, print or other mediums.</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <ol class="ol1">
+          <li class="li3"><b>TERM:</b>
+          </li>
+      </ol>
+      <ol class="ol1">
+          <li class="li3">This Agreement shall be effective from the date hereof and shall continue to be in force for a Period of five (5) years after the cessation of all business relationship between the parties.&nbsp;</li>
+          <li class="li3">Upon any demand made by Disclosing Party, the Receiving Party shall immediately cease any and all disclosures or uses of Confidential Information, and at the request of the Disclosing Party, the Receiving Party shall promptly &nbsp; return or destroy
+              all written, graphic or other tangible forms of the Confidential Information and all copies, abstracts, extracts, samples, notes or modules or like thereof, in accordance with this Agreement. The obligations of the Receiving Party respecting disclosure
+              and confidentiality shall continue to be binding and applicable without limit except and until such information enters the public domain.</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <ol class="ol1">
+          <li class="li3"><b>TITLE AND PROPRIETARY RIGHTS: </b>Notwithstanding the disclosure of any Confidential Information by the Disclosing Party to the Receiving Party, the Disclosing Party shall retain title and all intellectual property and proprietary rights in the
+              Confidential Information. No license under any trademark, patent or copyright or application for the same which are now or thereafter may be obtained by the First Party is either granted or implied by the conveying of Confidential Information.
+              The Receiving Party shall not conceal, alter, obliterate, mutilate, deface or otherwise interfere with any trademark, trademark notice, copyright notice, confidentiality notice or any notice of any other proprietary right of the Disclosing Party
+              on any copy of the Confidential Information, and shall reproduce any such mark or notice on all copies of such Confidential Information. Likewise, the Receiving Party shall not add or emboss its own or any other any mark, symbol or logo on such
+              Confidential Information.</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <ol class="ol1">
+          <li class="li3"><b>RETURN OF CONFIDENTIAL INFORMATION:</b>
+          </li>
+      </ol>
+      <p class="p1">Upon written demand of the Disclosing Party, the Receiving Party shall&nbsp;</p>
+      <ol class="ol1">
+          <li class="li3">cease using the Confidential Information,&nbsp;</li>
+          <li class="li3">return the Confidential Information and all copies, abstract, extracts, samples, notes or modules thereof to the Disclosing Party within thirty days after receipt of notice, and&nbsp;</li>
+          <li class="li3">upon such return, certify in writing that the Receiving Party has complied with the obligations set forth in this paragraph.</li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <ol class="ol1">
+          <li class="li3"><b>REMEDIES:</b>
+          </li>
+      </ol>
+      <p class="p2">
+          <br>
+      </p>
+      <p class="p1">The Receiving Party acknowledges that if the Receiving Party fails to comply with any of its obligations hereunder, the Disclosing Party may suffer immediate, irreparable harm for which monetary damages may not be adequate. The Receiving Party acknowledges
+          that damages are not a sufficient remedy for the Disclosing Party for any breach of any of the Receiving Party’s undertakings herein provided and the Receiving Party further acknowledges that the Disclosing Party is entitled to, without limitation
+          to the other rights guaranteed under this Agreement, tospecific performance or injunctive relief (as appropriate) as one of the remedies for any breach or threatened breach of those undertakings by the Receiving Party, in addition to any other remedies
+          available to the Disclosing Party in law or in equity.&nbsp;</p>
+      <p class="p2">
+          <br>
+      </p>
+      <ol class="ol1">
+          <li class="li3"><b>ENTIRE AGREEMENT, AMENDMENT, AND ASSIGNMENT: </b>This Agreement constitutes the entire agreement between the parties relating to the matters discussed herein and supersedes any and all prior oral discussions and/or written correspondence or agreements
+              between the parties. This Agreement may be amended or modified only with the mutual written consent of the parties, by way of an addendum. Neither this Agreement nor any right granted hereunder shall be assignable or otherwise transferable.</li>
+      </ol>
+      <div><font face="Helvetica"><title></title><p class="p1"><br></p><ol class="ol1">
+      <li class="li2"><b>DISPUTE RESOLUTION:&nbsp;</b></li>
+      </ol><ol class="ol1">
+      <li class="li2">The parties shall attempt in good faith to resolve any dispute arising out of or in connection with this Agreement promptly by negotiation to be held in <i>&lt;Dispute Resolution Location&gt;</i>, India.&nbsp;</li>
+      <li class="li2">In the event that the negotiation is unsuccessful after a period of twenty one (21) business days, the parties shall refer the matter to arbitration.</li>
+      <li class="li2">The parties agree that the dispute shall be referred to a Sole Arbitrator for resolution, with the Disclosing Party choosing the Sole Arbitrator.&nbsp;</li>
+      <li class="li2">The Arbitration proceedings shall be in English and the seat of the arbitration shall be &lt;<i>Dispute Resolution Location</i>&gt;.&nbsp;</li>
+      <li class="li2">Any dispute not resolved by Arbitration shall be referred to courts at &lt;<i>Dispute Resolution Location&gt;</i>.&nbsp;</li>
+      </ol><p class="p1"><br></p><ol class="ol1">
+      <li class="li2"><b>GOVERNING LAW AND JURISDICTION:</b>This Agreement shall be governed in all respects by the laws of the <i>&lt;Country&gt;</i> and courts of &lt;<i>Dispute Resolution Location&gt;</i>, <i>&lt;Country&gt;</i> shall have exclusive jurisdiction with respect any cause action arising out of this Agreement.</li>
+      </ol><p class="p1"><br></p><p class="p1"><br></p><ol class="ol1">
+      <li class="li2"><b>MISCELLANEOUS</b></li>
+      </ol><p class="p3">The Second Party and its employees shall not claim or promote the sale/ project undertaken by them on behalf of the First Party as their own under any circumstance.</p><ol class="ol1">
+      <li class="li2">No failure or delay by either Party in exercising or enforcing any right, remedy or power hereunder shall operate as a waiver thereof, nor shall any single or partial exercise or enforcement of any right, remedy or power preclude any further exercise or enforcement thereof or the exercise or enforcement of any other right, remedy or power.</li>
+      <li class="li2">The failure of either party to enforce its rights under this Agreement at any time for any period shall not be construed as a waiver of such rights.</li>
+      <li class="li2">In the event that any of the provisions of this Agreement shall be held by a court or other tribunal of competent jurisdiction to be unenforceable, the remaining portions hereof shall remain in full force and effect.</li>
+      <li class="li2">The Second Party shall not disclose the details of sale, transaction, cost, installation details even if the Second Party changes trade name and operates under a new name or a new address.</li>
+      <li class="li2">In the event the Jurisdiction clause of this Agreement is held by a court or other tribunal of competent jurisdiction to be unenforceable, the jurisdiction shall be deemed to be conferred on the courts in Bengaluru, India.&nbsp;</li>
+      <li class="li2">All obligations respecting the Confidential Information provided hereunder shall survive any termination of this Agreement</li>
+      <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
+      </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p><p class="p3"><b>WITNESSES:&nbsp;</b></p><p class="p3"><b><i>&lt;SIGNATURE OF WITNESS 1&gt;</i></b></p><p class="p3">1 <i>&lt;Name of Witness One&gt;</i>&nbsp;</p><p class="p3"><b><i>&lt;SIGNATURE OF WITNESS 2&gt;</i></b></p><p class="p3">2 <i>&lt;Name of Witness Two&gt;</i>&nbsp;</p><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>&lt;SIGNATURE OF FIRST PARTY&gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;SIGNATURE OF SECOND PARTY&gt;</i></b></p><p class="p1"><br></p><p class="p3"><i>&lt;NAME OF FIRST PARTY, IN CAPS&gt; &nbsp; &nbsp; &nbsp; &nbsp; &lt;NAME OF SECOND PARTY, IN CAPS&gt;</i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      </div>
+      <p></p>
+    - '2015-03-16 07:22:32.399949'
+    - '2015-03-16 08:05:03.882262'
     - icon-non-disclosure
