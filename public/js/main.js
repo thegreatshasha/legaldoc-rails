@@ -61,19 +61,42 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			$location.path(this.adminFormPath);
 		}
 
+		this.cleanTemplate = function() {
+			//return "<h1>This shouldn't be stuck</h1>"
+			return parent.template.html.replace(/[\n\r]/g, '');
+		}
+
+		this.downloadPdf = function(){
+			$http({
+			    url: '/templates/download.pdf',
+			    method: "POST",
+			    data: {html: parent.cleanTemplate()}, //this is your json data string
+			    headers: {
+			       'Content-type': 'application/json'
+			    },
+			    responseType: 'arraybuffer'
+			}).success(function (data, status, headers, config) {
+			    var blob = new Blob([data], {type: "application/pdf"});
+			    var objectUrl = URL.createObjectURL(blob);
+			    window.open(objectUrl);
+			}).error(function (data, status, headers, config) {
+			    //upload failed
+			});
+		}
+
 		this.fetchTemplates = function () {
 			var promise = $http.get('/templates.json').success(function(data){
 				parent.templates = data;
 				//$compile(element)(scope);
 		      	//console.log(data);
 		      	//alert("yoyo");
-		      	//debugger;
+		      	////debugger;
 	      	});
 	      	return promise;
 		}
 
 		this.newTemplate = function() {
-			debugger;
+			//debugger;
 			this.template = {};
 			$location.path(this.adminFormPath);
 		}
@@ -109,7 +132,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
         $scope.dataService = dataService;
 
         $scope.newTemplate = function() {
-        	debugger;
+        	//debugger;
         }
     })
     .controller("CustomerController", function($scope, $timeout, dataService){
@@ -123,27 +146,6 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
     .controller("DownloadController", function($scope, dataService){
     	$scope.dataService = dataService;
     })
-	.directive('downloadPdf',['$sce', '$parse', '$compile', function($sce, $parse, $compile){
-	  return {
-	  	link: function(scope,element,attr){
-	      html2canvas(document.body, {
-				onrendered: function(canvas) {
-					document.body.appendChild(canvas);
-
-					var pdf = new jsPDF('p','pt','a4');
-
-					pdf.addHTML($("canvas")[0],function() {
-					    pdf.save('agreement.pdf');
-
-					    $('canvas').remove();
-
-					    window.history.back()
-					});
-				}
-		  });     
-	    } 
-	  };
-	}])
 	.directive('compileHtml',['$sce', '$parse', '$compile', function($sce, $parse, $compile){
 	  return {
 	    link: function(scope,element,attr){
@@ -161,7 +163,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	restrict: 'E',
 	  	scope: true,
 	    link: function(scope, element, attr) {
-	      //debugger;
+	      ////debugger;
 	      var $el = $("<form><p style='text-align: center;'></p></form>");
 	      // Strip non form tags and compile
 	      guiderInputs = element.find(".guiderInput")
@@ -169,7 +171,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 					return $(data).attr('name');
 				}
 			);
-	      debugger;//Try this out
+	      //debugger;//Try this out
 	      $el.append(guiderInputs);
 	      $compile($el.contents())(scope);
 	      var index = tour.steps.length + 1;
@@ -243,7 +245,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	},
 	  	link: function(scope, element, attr){
 	      //console.log('i am alive!', dataService);
-	      //debugger; 
+	      ////debugger; 
 	    } 
 	  };
 	}])
@@ -259,7 +261,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      // 	//if(!scope.$$phase)
 	      // 	$location.path("/form");
 	      // }
-	      //debugger;
+	      ////debugger;
 	      	scope.dataService = dataService;
 	      	dataService.fetchTemplates();
 	      
@@ -288,7 +290,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	templateUrl: 'templates/edit-template.html',
 	  	link: function(scope, element, attr){
 	  		scope.dataService = dataService;
-	  		debugger;
+	  		//debugger;
 	    } 
 	  };
 	}])
@@ -300,8 +302,8 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	templateUrl: 'templates/tour-steps.html',
 	  	link: function(scope, element, attr){
 	      //console.log('i am alive!', dataService);
-	      //debugger; 
-	      //debugger;
+	      ////debugger; 
+	      ////debugger;
 	      scope.steps = tour.steps;
 
 	      scope.stepLength = function(){
@@ -315,7 +317,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      scope.$watch(scope.stepLength, function(data, newdata){
 	      	console.log(data);
 	      	scope.steps = tour.steps;
-	      	//debugger;
+	      	////debugger;
 	      })
 	    } 
 	  };
@@ -329,11 +331,11 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	link: function(scope, element, attr){
 	  	  scope.template = {};
 	  	  //console.log('i am alive!', dataService);
-	      //debugger; 
+	      ////debugger; 
 	      scope.saveTemplate = function(data) {
 	      	var formData = element.serializeJSON();
-	      	//debugger;
-	      	//debugger;
+	      	////debugger;
+	      	////debugger;
 	      }
 	    } 
 	  };
@@ -354,7 +356,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 
 	      		var model = $parse(attr.assignData);
 	      		model.assign(scope, element.val());
-	      		//debugger;
+	      		////debugger;
 	      	});
 	      })
 

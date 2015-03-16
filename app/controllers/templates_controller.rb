@@ -8,6 +8,16 @@ class TemplatesController < ApplicationController
     @templates = Template.all
   end
 
+  # POST /templates.pdf
+  def download
+    @html = params[:html]
+    respond_to do |format|
+      format.pdf do
+        render :pdf => "report", :layout => 'pdf.html.erb', :template    => "templates/pdf.html.erb"
+      end
+    end
+  end
+
   # GET /templates/1
   # GET /templates/1.json
   def show

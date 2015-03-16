@@ -39,4 +39,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'byebug'
 gem 'yaml_db'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf'
 
