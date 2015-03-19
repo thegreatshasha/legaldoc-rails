@@ -41,5 +41,7 @@ gem 'byebug'
 gem 'yaml_db'
 gem 'wicked_pdf', '~> 0.9.10'
 gem 'wkhtmltopdf-binary', '~> 0.9.9'
+gem 'execjs'
+gem 'therubyracer'
 gem 'puma'
 
