@@ -44,4 +44,4 @@ gem 'wkhtmltopdf-binary', '~> 0.9.9'
 gem 'execjs'
 gem 'therubyracer'
 gem 'puma'
-
+gem 'mysql2'
