@@ -39,7 +39,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	        controller: 'MainController'
 	      });
 	  }])
-	.run( function($rootScope, $location) {
+	.run( function($rootScope, $location, $templateCache) {
 	   $rootScope.$watch(function() { 
 	      return $location.path(); 
 	    },
@@ -47,13 +47,16 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      tour.cancel();
 	      tour.steps = [];
 	    });
+
+	   $templateCache.get('templates/variable.html');
 	})
-	.service('dataService', ['$location', '$http', '$rootScope', function($location, $http, $rootScope){
+	.service('dataService', ['$location', '$http', '$rootScope', '$sce', function($location, $http, $rootScope, $sce){
 		var parent = this;
 		this.template = {};
 		this.templates = [];
 		this.adminFormPath = "/adminform";
 		this.customerFormPath = "/form";
+		this.fileUrl = "";
 		window.d = this;
 
 		this.editTemplate = function (template) {
@@ -77,8 +80,8 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			    responseType: 'arraybuffer'
 			}).success(function (data, status, headers, config) {
 			    var blob = new Blob([data], {type: "application/pdf"});
-			    var objectUrl = URL.createObjectURL(blob);
-			    window.open(objectUrl);
+			    parent.fileUrl = URL.createObjectURL(blob);
+			    parent.trustedFileUrl = $sce.trustAsResourceUrl(parent.fileUrl);
 			}).error(function (data, status, headers, config) {
 			    //upload failed
 			});
@@ -178,16 +181,17 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  	scope: true,
 	    link: function(scope, element, attr) {
 	      ////debugger;
-	      var $el = $("<form><p style='text-align: center;'></p></form>");
+	      this.$el = $("<div style='text-align: center;'><ng-form name='guiderForm'></ng-form></div>");
 	      // Strip non form tags and compile
 	      guiderInputs = element.find(".guiderInput")
 	      guiderInputs = _.uniq(guiderInputs, function(data) {
 					return $(data).attr('name');
 				}
 			);
-	      //debugger;//Try this out
-	      $el.append(guiderInputs);
-	      $compile($el.contents())(scope);
+	      window.popo = this;
+	      popo.scope = scope;
+	      this.$el.find("ng-form").append(guiderInputs);
+	      //$compile(this.$el.contents())(scope);
 	      var index = tour.steps.length + 1;
 	      var lastIndex = $("guider").length;
 
@@ -199,7 +203,11 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			  		classes: 'shepherd-button-example-primary shepherd-button-back',
 			  		action: function() {
 			  			scope.$apply(function(){
-			  				tour.back();
+			  				if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			  					tour.back();
+			  				//else
+
+			  					// show some motherfucking errors
 			  			})
 			  		}
 			},
@@ -208,7 +216,8 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			      classes: 'shepherd-button-example-primary shepherd-button-next',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		tour.next();
+			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			      			tour.next();
 			      	});
 			      }
 			    },
@@ -236,7 +245,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 		      	break;
 		  }
 		    
-	      tour.addStep('myStep' + tour.steps.length, {
+	      var tr = tour.addStep('myStep' + tour.steps.length, {
 			  title: attr.description,
 			  scrollTo: true,
 			  text: $el[0],
@@ -244,22 +253,42 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			  classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
 			  buttons: buttons
 		  });
-	      
+
+		  var parentScope = scope;
+
+		  var step = tr.steps[tr.steps.length - 1];
+	      step.on('show', function(a,b,c,d){
+	      	var scope = parentScope;
+	      	var $el = $(this.el)
+	      	$compile($el.contents())(scope);
+	      	debugger;
+	      });
 	      
 	    } 
 	  };
 	}])
-	.directive('variable',['$compile', 'dataService', function($compile, dataService){
+	.directive('variable',['$http', '$compile', '$templateCache', 'dataService', function($http, $compile, $templateCache, dataService){
 	  return {
 	  	restrict: 'E',
 	  	replace: true,
 	  	scope: true,
-	  	template: function(element, attr){
-	  		return '<span><div class="guiderInput" name="' + attr.name + '"><label for="' + attr.name +'">' + attr.question + '</label><input type="text" name="' + attr.name +'" ng-model="dataService.' + attr.name +'"/></div>' + '<span class="variableDisp" ng-bind="dataService.' + attr.name +'"></span></span>';
-	  	},
+  		template: function(element, attr){
+  			var tpl =  '<span>\
+							<div class="guiderInput" name="' + attr.name + '">\
+								<label for="' + attr.name +'">' + attr.question + '</label>\
+								<input type="text" name="' + attr.name +'" ng-model="dataService.' + attr.name +'"/>\
+								<span class="error" ng-show="guiderForm.' + attr.name + '.$dirty">Dirty</span>\
+								{{guiderForm.' + attr.name + '.$dirty}}\
+							</div>' + 
+							'<span class="variableDisp" ng-bind="dataService.' + attr.name +'"></span>\
+						</span>';
+			return tpl;
+  		},
 	  	link: function(scope, element, attr){
 	      //console.log('i am alive!', dataService);
 	      ////debugger; 
+	      scope.dataService = dataService;
+	  	  scope.attr = attr;
 	    } 
 	  };
 	}])

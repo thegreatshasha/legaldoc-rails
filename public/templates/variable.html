@@ -1,0 +1,8 @@
+<span>
+	<div class="guiderInput" name="{{attr.name}}">
+		<label for="{{attr.name}}">{{attr.question}}</label>
+		<input type="text" name="{{attr.name}}" ng-model="dataService[attr.name]"/>
+		<!--p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p-->
+	</div>
+	<span class="variableDisp" ng-bind="dataService[attr.name]"></span>
+</span>
