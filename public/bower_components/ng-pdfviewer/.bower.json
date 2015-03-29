@@ -1,0 +1,14 @@
+{
+  "name": "ng-pdfviewer",
+  "homepage": "https://github.com/akrennmair/ng-pdfviewer",
+  "_release": "5cf4ffba09",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5cf4ffba09b9b6c8583258f9f0549e1fc6e8500a"
+  },
+  "_source": "https://github.com/akrennmair/ng-pdfviewer.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/akrennmair/ng-pdfviewer.git",
+  "_direct": true
+}

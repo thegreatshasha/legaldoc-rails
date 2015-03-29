@@ -63,6 +63,7 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 		window.d = this;
 
 		this.saveContact = function(){
+			this.contact.type = this.template.name;
 			$http.post(this.contactsUrl, this.contact).success(function(data){
 	    		parent.downloadPdf();
 	    	})
