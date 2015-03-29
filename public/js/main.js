@@ -237,7 +237,6 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			      classes: 'shepherd-button-example-primary shepherd-button-next',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		debugger;
 			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			      			tour.next();
 			      		else
