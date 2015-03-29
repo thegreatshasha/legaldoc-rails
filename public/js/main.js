@@ -1,4 +1,4 @@
-angular.module("myapp", ['textAngular', 'ngRoute'])
+angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-bar'])
 	.config(['$routeProvider',
 	  function($routeProvider) {
 	    $routeProvider.
@@ -55,9 +55,18 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 		this.template = {};
 		this.templates = [];
 		this.adminFormPath = "/adminform";
+		this.downloadPath = "/download";
 		this.customerFormPath = "/form";
 		this.fileUrl = "";
+		this.contact = {};
+		this.contactsUrl = "/contacts.json";
 		window.d = this;
+
+		this.saveContact = function(){
+			$http.post(this.contactsUrl, this.contact).success(function(data){
+	    		parent.downloadPdf();
+	    	})
+		}
 
 		this.editTemplate = function (template) {
 			this.template = template;
@@ -82,6 +91,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			    var blob = new Blob([data], {type: "application/pdf"});
 			    parent.fileUrl = URL.createObjectURL(blob);
 			    parent.trustedFileUrl = $sce.trustAsResourceUrl(parent.fileUrl);
+			    $location.path(parent.downloadPath);
 			}).error(function (data, status, headers, config) {
 			    //upload failed
 			});
@@ -133,10 +143,6 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	}])
     .controller("MainController", function($scope, dataService) {
         $scope.dataService = dataService;
-
-        $scope.newTemplate = function() {
-        	//debugger;
-        }
     })
     .controller("CustomerController", function($scope, $timeout, dataService){
     	$scope.dataService = dataService;
@@ -178,25 +184,39 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	.directive('guider',['$sce', '$parse', '$compile', '$location', function($sce, $parse, $compile, $location){
 	  return {
 	  	restrict: 'E',
-	  	scope: true,
+	  	scope: {},
 	    link: function(scope, element, attr) {
-	      ////debugger;
-	      this.$el = $("<div style='text-align: center;'><ng-form name='guiderForm'></ng-form></div>");
+	      // Adding a form with validation here;
+	      this.$el = $("<div style='text-align: center;'><form strategy='dirty' xt-form name='guiderForm' novalidate></form></div>");
 	      // Strip non form tags and compile
 	      guiderInputs = element.find(".guiderInput")
+	      // Add xt-validate to inputs here so tooltip validation works
 	      guiderInputs = _.uniq(guiderInputs, function(data) {
-					return $(data).attr('name');
+	      			$(data).find('input').attr('xt-validate', true);
+	      			return $(data).attr('name');
 				}
 			);
-	      window.popo = this;
-	      popo.scope = scope;
-	      this.$el.find("ng-form").append(guiderInputs);
+	      
+	      this.$el.find("form").append(guiderInputs);
 	      //$compile(this.$el.contents())(scope);
 	      var index = tour.steps.length + 1;
 	      var lastIndex = $("guider").length;
 
 	      // Checkout hack
 	      var buttons = [];
+
+	      var showErrors = function() {
+	      	// TODO: Quirky soln for setting form to dirty. This should be done automatically.
+	      	angular.forEach(scope.guiderForm.$error, function(error){
+  				angular.forEach(error, function(field) {
+				    field.$setDirty();
+				    field.$error.custom = Math.random();
+				    // Trigger error
+
+				});
+  			});
+	      }
+
 	      var buttonObj = {
 	      	'back': {
 			  		text: 'Back',
@@ -205,7 +225,8 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			  			scope.$apply(function(){
 			  				if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			  					tour.back();
-			  				//else
+			  				else
+			  					showErrors();
 
 			  					// show some motherfucking errors
 			  			})
@@ -216,8 +237,11 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			      classes: 'shepherd-button-example-primary shepherd-button-next',
 			      action: function() {
 			      	scope.$apply(function(){
+			      		debugger;
 			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			      			tour.next();
+			      		else
+			      			showErrors();
 			      	});
 			      }
 			    },
@@ -226,7 +250,11 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 			      classes: 'shepherd-button-example-primary shepherd-button-finish',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		$location.path('/checkout');
+			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			      			$location.path('/checkout');
+			      		else
+			      			showErrors();
+			      		
 			      	});
 			      }
 			    }
@@ -261,7 +289,7 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      	var scope = parentScope;
 	      	var $el = $(this.el)
 	      	$compile($el.contents())(scope);
-	      	debugger;
+	      	//debugger;
 	      });
 	      
 	    } 
@@ -271,24 +299,50 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	  return {
 	  	restrict: 'E',
 	  	replace: true,
-	  	scope: true,
+	  	scope: false,
   		template: function(element, attr){
+  			// TODO: Need cleaner solution for this. Probably move this to a template/reusable construct html method
+  			var attrs = ['<input'];
+  			if(!_.has(attr, 'optional'))
+  				attrs.push('required');
+  			if(attr.type)
+  				attrs.push('type="' + attr.type + '"');
+  			attrs.push('name="' + attr.name +'"');
+  			attrs.push('ng-model="dataService.'+ attr.name + '"');
+  			attrs.push('/>');
+  			var inputString = attrs.join(" ");
+  			// attributes construction here
+
   			var tpl =  '<span>\
 							<div class="guiderInput" name="' + attr.name + '">\
-								<label for="' + attr.name +'">' + attr.question + '</label>\
-								<input type="text" name="' + attr.name +'" ng-model="dataService.' + attr.name +'"/>\
-								<span class="error" ng-show="guiderForm.' + attr.name + '.$dirty">Dirty</span>\
-								{{guiderForm.' + attr.name + '.$dirty}}\
-							</div>' + 
-							'<span class="variableDisp" ng-bind="dataService.' + attr.name +'"></span>\
+								<label for="' + attr.name +'">' + attr.question + '</label>'+
+								inputString +
+							'</div>' + 
+							'<span class="variableDisp" ng-bind="(dataService.' + attr.name +'|pretty)"></span>\
 						</span>';
 			return tpl;
+
   		},
 	  	link: function(scope, element, attr){
 	      //console.log('i am alive!', dataService);
 	      ////debugger; 
 	      scope.dataService = dataService;
 	  	  scope.attr = attr;
+	    } 
+	  };
+	}])
+	.directive('listenDirective',['dataService', function(dataService){
+	  return {
+	  	restrict: 'A',
+	  	scope: false,
+  		link: function(scope, element, attr){
+	      //console.log('i am alive!', dataService);
+	      ////debugger; 
+	      scope.dataService = dataService;
+	  	  scope.attr = attr;
+	  	  element.on('change', function(){
+	  	  	
+	  	  })
 	    } 
 	  };
 	}])
@@ -410,4 +464,28 @@ angular.module("myapp", ['textAngular', 'ngRoute'])
 	      });       
 	    } 
 	  };
-	}]);
+	}])
+	.directive('myAnchor', function() {
+	  return {
+	    restrict: 'A',
+	    require: '?ngModel',
+	    link: function(scope, elem, attrs, ngModel) {
+	      return elem.bind('click', function() {
+	        //other stuff ...
+	        var el;
+	        el = document.getElementById(attrs['myAnchor']);
+	        return el.scrollIntoView();
+	      });      
+	    }
+	  };
+	})
+	.filter('pretty', function($filter) {
+		var angularDateFilter = $filter('date');
+	  	
+		return function(input) {
+			if(input instanceof Date)
+				return angularDateFilter(input, 'dd MMMM, yyyy');
+			else
+				return input;
+		};
+	});
