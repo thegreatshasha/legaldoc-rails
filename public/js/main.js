@@ -478,6 +478,23 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 	    }
 	  };
 	})
+	.directive('embedSrc', ['$parse', function ($parse) {
+	  return {
+	    restrict: 'A',
+	    link: function (scope, element, attrs) {
+	      var current = element;
+	      var parsed = $parse(attrs.embedSrc);
+	      function getStringValue() { return (parsed(scope) || '').toString(); } 
+	      scope.$watch(getStringValue, function (value) {
+	        var clone = element
+	                      .clone()
+	                      .attr('src', value);
+	        current.replaceWith(clone);
+	        current = clone;
+	      });
+	    }
+	  };
+	}])
 	.filter('pretty', function($filter) {
 		var angularDateFilter = $filter('date');
 	  	
