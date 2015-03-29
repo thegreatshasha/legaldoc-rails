@@ -1,24 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
+<div class="row">
+  <h2>Name:</h2>
+  <div class="panel-body">
+  	<p><%= @contact.name %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
+<div class="row">
+  <h2>Email:</h2>
+  <div class="panel-body">
+  	<p><%= @contact.email %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Tel:</strong>
-  <%= @contact.tel %>
-</p>
+<div class="row">
+  <h2>Telephone:</h2>
+  <div class="panel-body">
+  	<p><%= @contact.tel %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @contact.address %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<div class="row">
+  <h2>Address:</h2>
+  <div class="panel-body">
+  <p><%= @contact.address %></p>
+  </div>
+</div>
+<br><br>
+<span class="btn btn-primary"><%= link_to 'Edit', edit_contact_path(@contact) %> </span>
+<span class="btn btn-primary"><%= link_to 'Back', contacts_path %></span>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br>

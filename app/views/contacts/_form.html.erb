@@ -11,23 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :tel %><br>
-    <%= f.text_field :tel %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div form-control>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, :class => "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :tel %><br>
+      <%= f.text_field :tel, :class => "form-control" %>
+    </div>
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_area :address, :class => "form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
+
+
