@@ -203,12 +203,16 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 	      var index = tour.steps.length + 1;
 	      var lastIndex = $("guider").length;
 
+	      scope.form = function(){
+	      	return scope.guiderForm;
+	      }
+
 	      // Checkout hack
 	      var buttons = [];
 
 	      var showErrors = function() {
 	      	// TODO: Quirky soln for setting form to dirty. This should be done automatically.
-	      	angular.forEach(scope.guiderForm.$error, function(error){
+	      	angular.forEach(scope.form().$error, function(error){
   				angular.forEach(error, function(field) {
 				    field.$setDirty();
 				    field.$error.custom = Math.random();
@@ -224,10 +228,10 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			  		classes: 'shepherd-button-example-primary shepherd-button-back',
 			  		action: function() {
 			  			scope.$apply(function(){
-			  				if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			  				//if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			  					tour.back();
-			  				else
-			  					showErrors();
+			  				//else
+			  					//showErrors();
 
 			  					// show some motherfucking errors
 			  			})
@@ -238,7 +242,8 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			      classes: 'shepherd-button-example-primary shepherd-button-next',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			      		debugger;
+			      		if(scope.form().$dirty && scope.form().$valid)
 			      			tour.next();
 			      		else
 			      			showErrors();
@@ -250,9 +255,9 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			      classes: 'shepherd-button-example-primary shepherd-button-finish',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			      		//if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			      			$location.path('/checkout');
-			      		else
+			      		//else
 			      			showErrors();
 			      		
 			      	});
@@ -272,6 +277,9 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 		      	buttons = [buttonObj['back'], buttonObj['next']];
 		      	break;
 		  }
+
+		  // Will this change the bindings?
+		  $compile($el.contents())(scope);
 		    
 	      var tr = tour.addStep('myStep' + tour.steps.length, {
 			  title: attr.description,
@@ -281,17 +289,6 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			  classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
 			  buttons: buttons
 		  });
-
-		  var parentScope = scope;
-
-		  var step = tr.steps[tr.steps.length - 1];
-	      step.on('show', function(a,b,c,d){
-	      	var scope = parentScope;
-	      	var $el = $(this.el)
-	      	$compile($el.contents())(scope);
-	      	//debugger;
-	      });
-	      
 	    } 
 	  };
 	}])
