@@ -41,6 +41,18 @@
 		    scrollTo: true
 		  }
 		});
+
+        // TODO: Move this into separate extensions file
+        tour.gotoStep = function(index) {
+            var currentStepIndex = _.findIndex(tour.steps, tour.getCurrentStep())
+            var diff = index - currentStepIndex;
+            var times = Math.abs(diff);
+            var method = diff>=0 ? "next" : "back";
+            console.log(currentStepIndex, diff, times, method);
+            for(var i = 1; i<=times; i++){
+             tour[method]();
+            }
+        }
     </script>
 </head>
 

@@ -188,9 +188,9 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 	  	scope: {},
 	    link: function(scope, element, attr) {
 	      // Adding a form with validation here;
-	      this.$el = $("<div style='text-align: center;'><form strategy='dirty' xt-form name='guiderForm' novalidate></form></div>");
+	      var $el = $("<div style='text-align: center;'><form strategy='dirty' xt-form name='guiderForm' novalidate></form></div>");
 	      // Strip non form tags and compile
-	      guiderInputs = element.find(".guiderInput")
+	      var guiderInputs = element.find(".guiderInput")
 	      // Add xt-validate to inputs here so tooltip validation works
 	      guiderInputs = _.uniq(guiderInputs, function(data) {
 	      			$(data).find('input').attr('xt-validate', true);
@@ -198,29 +198,13 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 				}
 			);
 	      
-	      this.$el.find("form").append(guiderInputs);
+	      $el.find("form").append(guiderInputs);
 	      //$compile(this.$el.contents())(scope);
 	      var index = tour.steps.length + 1;
 	      var lastIndex = $("guider").length;
 
-	      scope.form = function(){
-	      	return scope.guiderForm;
-	      }
-
 	      // Checkout hack
 	      var buttons = [];
-
-	      var showErrors = function() {
-	      	// TODO: Quirky soln for setting form to dirty. This should be done automatically.
-	      	angular.forEach(scope.form().$error, function(error){
-  				angular.forEach(error, function(field) {
-				    field.$setDirty();
-				    field.$error.custom = Math.random();
-				    // Trigger error
-
-				});
-  			});
-	      }
 
 	      var buttonObj = {
 	      	'back': {
@@ -231,7 +215,7 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			  				//if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			  					tour.back();
 			  				//else
-			  					//showErrors();
+			  					//scope.guiderForm.showErrors();
 
 			  					// show some motherfucking errors
 			  			})
@@ -243,10 +227,10 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			      action: function() {
 			      	scope.$apply(function(){
 			      		debugger;
-			      		if(scope.form().$dirty && scope.form().$valid)
+			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			      			tour.next();
 			      		else
-			      			showErrors();
+			      			scope.guiderForm.showErrors();
 			      	});
 			      }
 			    },
@@ -255,16 +239,16 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			      classes: 'shepherd-button-example-primary shepherd-button-finish',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		//if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			      			$location.path('/checkout');
-			      		//else
-			      			showErrors();
+			      		else
+			      			scope.guiderForm.showErrors();
 			      		
 			      	});
 			      }
 			    }
 	      };
-	      
+
 	      //console.log(html);
 	      switch(index) {
 		      case 1:
@@ -278,8 +262,20 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 		      	break;
 		  }
 
-		  // Will this change the bindings?
+		  // Compiles guiders and gives us access to guiderform. Maybe this should be triggered through events?
 		  $compile($el.contents())(scope);
+
+		  scope.guiderForm.showErrors = function() {
+	      	// TODO: Quirky soln for setting form to dirty. This should be done automatically.
+	      	angular.forEach(this.$error, function(error){
+  				angular.forEach(error, function(field) {
+				    field.$setDirty();
+				    field.$error.custom = Math.random();
+				    // Trigger error
+
+				});
+  			});
+	      }
 		    
 	      var tr = tour.addStep('myStep' + tour.steps.length, {
 			  title: attr.description,
@@ -289,6 +285,26 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			  classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
 			  buttons: buttons
 		  });
+
+		  var currentStepIndex = tour.steps.length - 1;
+		  var currentStep = tour.steps[currentStepIndex];
+		  
+		  currentStep.on('show', function(){
+		  	scope.$parent.activeGuiderForm = scope.guiderForm;
+		  })
+		  
+		  // TODO: We are attaching multiple events here. Need to find a better solution for this
+		  // tour.on('goto'+currentStepIndex, function($index){
+		  // 	//if($index == currentStepIndex){
+		  // 		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			 //    	tour.gotoStep(currentStepIndex);
+			 //    else{
+			 //    	//debugger;
+			 //    	showErrors();
+			 //    }
+		  // 	//}
+		  // })
+			
 	    } 
 	  };
 	}])
@@ -402,6 +418,13 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 
 	      scope.stepLength = function(){
 	      	return tour.steps.length;
+	      }
+
+	      scope.gotoStep = function(index){
+	      	if(scope.activeGuiderForm.$valid)
+	      		tour.gotoStep(index);
+	      	else
+	      		scope.activeGuiderForm.showErrors();
 	      }
 
 	      scope.isCurrentStep = function(step) {
