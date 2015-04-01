@@ -290,7 +290,9 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 		  var currentStep = tour.steps[currentStepIndex];
 		  
 		  currentStep.on('show', function(){
-		  	scope.$parent.activeGuiderForm = scope.guiderForm;
+			// Workaround for ng model not updating
+			$('input[ng-model]').trigger('input');
+  		  	scope.$parent.activeGuiderForm = scope.guiderForm;
 		  })
 		  
 		  // TODO: We are attaching multiple events here. Need to find a better solution for this
