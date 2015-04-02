@@ -11,7 +11,7 @@ class Contact < ActiveRecord::Base
     	Thread.new do
 			GOOGLE[:client].authorization.fetch_access_token!
     		session = GoogleDrive.login_with_oauth(GOOGLE[:client].authorization.access_token)
-			sheet = GOOGLE[:session].spreadsheet_by_key('1Y-xXa1WXEnai-9nUvl1xRXEaQFzUMXe9r1tQVvZf3Zk').worksheets[0]
+			sheet = session.spreadsheet_by_key('1Y-xXa1WXEnai-9nUvl1xRXEaQFzUMXe9r1tQVvZf3Zk').worksheets[0]
 		
 			max_rows = sheet.rows.length
 
