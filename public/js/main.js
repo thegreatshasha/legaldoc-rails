@@ -34,6 +34,14 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 	        templateUrl: 'templates/pages/homepage.html',
 	        controller: 'MainController'
 	      }).
+	       when('/terms', {
+	        templateUrl: 'templates/pages/terms.html',
+	        controller: 'MainController'
+	      }).
+	        when('/faq', {
+	        templateUrl: 'templates/pages/faq.html',
+	        controller: 'MainController'
+	      }).
 	      when('/product', {
 	        templateUrl: 'templates/pages/product.html',
 	        controller: 'MainController'
