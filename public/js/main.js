@@ -148,6 +148,21 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
     .controller("CustomerController", function($scope, $timeout, dataService){
     	$scope.dataService = dataService;
     	tour.steps = [];
+    	$scope.guiderForms = [];
+
+    	window.scc = $scope;
+    	$scope.areFormsValid = function(){
+    		var isValid = true;
+    		// Since _.each does not allow breaking
+    		for(var i=0; i<this.guiderForms.length; i++){
+    			var form = this.guiderForms[i];
+    			if(form.$invalid){
+    				isValid = false;
+    				break;
+    			}
+    		}
+    		return isValid;
+    	}
     	
     	$timeout(function(){
     		tour.start();
@@ -226,7 +241,6 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			      classes: 'shepherd-button-example-primary shepherd-button-next',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		debugger;
 			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
 			      			tour.next();
 			      		else
@@ -239,7 +253,7 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 			      classes: 'shepherd-button-example-primary shepherd-button-finish',
 			      action: function() {
 			      	scope.$apply(function(){
-			      		if(scope.guiderForm.$dirty && scope.guiderForm.$valid)
+			      		if(scope.$parent.areFormsValid())
 			      			$location.path('/checkout');
 			      		else
 			      			scope.guiderForm.showErrors();
@@ -264,6 +278,10 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 
 		  // Compiles guiders and gives us access to guiderform. Maybe this should be triggered through events?
 		  $compile($el.contents())(scope);
+
+		  // Push current form into array
+		  scope.$parent.guiderForms.push(scope.guiderForm);
+		  window.spw = scope.$parent;
 
 		  scope.guiderForm.showErrors = function() {
 	      	// TODO: Quirky soln for setting form to dirty. This should be done automatically.
@@ -417,6 +435,8 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 	      ////debugger; 
 	      ////debugger;
 	      scope.steps = tour.steps;
+	      window.ss = scope;
+	      //debugger;
 
 	      scope.stepLength = function(){
 	      	return tour.steps.length;
