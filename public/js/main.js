@@ -153,10 +153,15 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
     .controller("MainController", function($scope, dataService) {
         $scope.dataService = dataService;
     })
-    .controller("CustomerController", function($scope, $timeout, dataService){
+    .controller("CustomerController", function($scope, $timeout, $location, dataService){
+    	// Redirect if template not found
+    	if(!dataService.template.name)
+        	$location.path('/product');
+    	
     	$scope.dataService = dataService;
     	tour.steps = [];
     	$scope.guiderForms = [];
+
 
     	window.scc = $scope;
     	$scope.areFormsValid = function(){
