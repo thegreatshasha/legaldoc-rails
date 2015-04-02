@@ -2,10 +2,9 @@
 	<ul class="list-group left-tabs nav nav-tabs" >
 	  <li class="" ng-repeat="step in steps track by $index" ng-class="{active: isCurrentStep(step)}" >
 
-	  	<a href="" ng-click="gotoStep($index)"><i class="glyphicon glyphicon-user marginRight"></i>{{step.options.title}}</a>
+	  	<!--a href="" ng-click="gotoStep($index)"><i class="glyphicon glyphicon-user marginRight"></i>{{step.options.title}}</a-->
 
-	  	<a href="" ng-click="gotoStep($index)">
-	  	<i class="glyphicon tabs-left-infoicon"></i>
+	  	<a href="" ng-click="gotoStep($index)"><i class="glyphicon glyphicon-user marginRight"></i>
 	  	{{step.options.title}}
 	  	<i class="fa fa-check" ng-show="guiderForms[$index].$valid"></i>
 	  	</a>
