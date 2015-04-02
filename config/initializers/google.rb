@@ -12,7 +12,3 @@ GOOGLE[:client].authorization = Signet::OAuth2::Client.new(
 	 :grant_type => 'authorization_code',
 	 :signing_key => GOOGLE[:key]
 )
-GOOGLE[:client].authorization.fetch_access_token!
-
-GOOGLE[:session] = GoogleDrive.login_with_oauth(GOOGLE[:client].authorization.access_token)
-GOOGLE[:customers_sheet] = GOOGLE[:session].spreadsheet_by_key('1Y-xXa1WXEnai-9nUvl1xRXEaQFzUMXe9r1tQVvZf3Zk').worksheets[0]

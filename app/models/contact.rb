@@ -8,8 +8,11 @@ class Contact < ActiveRecord::Base
 	private
     
     def write_to_google_drive
-		Thread.new do
-			sheet = GOOGLE[:customers_sheet]
+    	Thread.new do
+			GOOGLE[:client].authorization.fetch_access_token!
+    		session = GoogleDrive.login_with_oauth(GOOGLE[:client].authorization.access_token)
+			sheet = GOOGLE[:session].spreadsheet_by_key('1Y-xXa1WXEnai-9nUvl1xRXEaQFzUMXe9r1tQVvZf3Zk').worksheets[0]
+		
 			max_rows = sheet.rows.length
 
 			arr = self.attributes.slice("type", "name", "email", "tel", "address").map{|d|d[1]}
