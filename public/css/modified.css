@@ -39,12 +39,12 @@ section#products { background: url(../imgs/productWrapperBg.jpg) no-repeat; back
 .btn-black.active,
 .open > .dropdown-toggle.btn-black { color: #1a1a1a; background: #ffd200; border-color: #eec400; }
 #checkout {	border-top: 2px solid #000; }
-#checkout h2 { padding: 60px 0 70px 0; }
-.greyBg { background: #e9e8e8; border: 1px solid #c2c1c1; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; box-shadow: 3px 0px 10px #b9b9b9;	padding: 24px; margin: 20px 0 40px 0; }
+#checkout h2 { padding: 0; }
+.greyBg { background: #e9e8e8; border: 1px solid #c2c1c1; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; box-shadow: 3px 0px 10px #b9b9b9;	padding: 10px 40px; margin: 20px 0 40px 0; }
 .blackBg { background: #282828 url(../imgs/tick-bg.png) no-repeat center; border: 1px solid #c2c1c1; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; box-shadow: 3px 0px 10px #b9b9b9; padding: 24px; margin: 20px 0 40px 0; color: #fff; }
-.greyBg .h3 { font-size: 24px; margin-bottom: 35px; }
+.greyBg .h3 { font-size: 24px; margin-bottom: 15px; }
 .blackBg .h3 { font-size: 24px; margin-bottom: 35px; }
-.btn-black-small { background: #1a1a1a;	border: 1px solid #fff;	font-size: 21px; color: #fff; margin: 16px 0 15px 0px; padding: 15px 20px; width: auto; }
+.btn-black-small { background: #1a1a1a;	border: 1px solid #fff;	font-size: 21px; color: #fff; margin: 16px 0 15px 0px; padding: 15px 40px; width: auto; }
 .btn-black-small:hover,
 .btn-black-small:focus,
 .btn-black-small.focus,
@@ -177,7 +177,7 @@ input[type=radio]:not(old):checked +  label > span > span{
 .tabs-left-purpose { background: url(../imgs/lefttab-icons.png) no-repeat -42px -246px; width: 35px; height: 35px; }
 .tabs-left-confidential { background: url(../imgs/lefttab-icons.png) no-repeat -42px -309px; width: 35px; height: 35px; }
 .form-tab-right { background: #fff; padding: 35px; border: 50px solid #dddcdc; }
-.promissoryNote { background: url(../imgs/promissorynote.jpg) no-repeat center top; height: auto; width: 100%; padding-top: 400px; margin-bottom: 50px; }
+.promissoryNote { height: 375px; width: 100%; padding-top: 40px; margin-bottom: 50px; }
 .form-type-detail { background: #eeeded; border: 1px solid #ccc; width: 100%; padding: 4%; }
 .color-green { color: #3d9b35; }
 .form-drop-down { padding: 10px; height: 45px; }
@@ -247,6 +247,5 @@ span.spinner { position: absolute; height: 40px; user-select: none; -ms-user-sel
     float: left;
   }
 
-  .guiderInput input{
-    margin-left: 10px;
-  }
+  .guiderInput input{ padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 48%; }
+  .marginRight { margin-right: 16px; }

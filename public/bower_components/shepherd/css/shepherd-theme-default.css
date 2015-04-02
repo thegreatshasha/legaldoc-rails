@@ -224,8 +224,10 @@
   background: #3288e6;
   color: #fff; }
 .guiderInput{
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
 }
+.guiderInput label { width: 256px; margin: 15px 0; }
 .guiderInput input{
   margin-left: 4px;
   border-radius: none; 

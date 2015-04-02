@@ -43,20 +43,20 @@ templates:
   - logo
   records: 
   - - 26
-    - Non disclosure 1
+    - Non-Disclosure Agreement
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place" optional></variable> on
-              <variable name="date" question="Enter your date" type="date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -67,7 +67,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -84,7 +84,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -268,27 +268,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-14 16:07:54.000000000 Z
     - 2015-03-28 13:59:55.000000000 Z
     - icon-non-disclosure
   - - 30
-    - Non Disclosure 3
+    - Employment Agreement
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -299,7 +299,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -316,7 +316,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -500,27 +500,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:30:16.000000000 Z
     - 2015-03-16 16:30:16.000000000 Z
     - icon-non-disclosure
   - - 31
-    - Non disclosure 4
+    - Partnership Agreement
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -531,7 +531,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -548,7 +548,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -732,27 +732,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:30:47.000000000 Z
     - 2015-03-16 16:30:47.000000000 Z
     - icon-non-disclosure
   - - 32
-    - Non Disclosure 5
+    - Buy / Sell Agreement
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -763,7 +763,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -780,7 +780,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -964,27 +964,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:31:10.000000000 Z
     - 2015-03-16 16:31:10.000000000 Z
     - icon-non-disclosure
   - - 33
-    - Non disclosure 6
+    - Memorandum of Understanding
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -995,7 +995,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -1012,7 +1012,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -1196,27 +1196,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:31:31.000000000 Z
     - 2015-03-16 16:31:31.000000000 Z
     - icon-non-disclosure
   - - 34
-    - Non disclosure 7
+    - Make a Will
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -1227,7 +1227,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -1244,7 +1244,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -1428,27 +1428,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:31:43.000000000 Z
     - 2015-03-16 16:31:43.000000000 Z
     - icon-non-disclosure
   - - 35
-    - Non disclosure 8
+    - Rent / Lease Agreement
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -1459,7 +1459,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -1476,7 +1476,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -1660,27 +1660,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:31:48.000000000 Z
     - 2015-03-16 16:31:48.000000000 Z
     - icon-non-disclosure
   - - 36
-    - Non disclosure 9
+    - Loan / Borrow Money
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -1691,7 +1691,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -1708,7 +1708,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -1892,27 +1892,27 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:31:55.000000000 Z
     - 2015-03-16 16:31:55.000000000 Z
     - icon-non-disclosure
   - - 37
-    - Non Disclosure 2
+    - Power of Attorney
     - |-
       <p>
           <title></title>
       </p>
-      <h2><img src="http://currencyguide.eu/inr-en/50inr-note-front.png" style=""><br></h2>
+      <h2 class="promissoryNote"><img src="imgs/promissorynote.jpg" style="width: 100%; height: 410px; padding: 20px;"><br></h2>
       <h2>NON DISCLOSURE AGREEMENT BETWEEN <variable name="party1name" question=""></variable> and<variable name="party2name" question=""></variable></h2>
       <p class="p2">
           <br>
       </p>
       <guider description="Location and Date">
           <p class="p1">This Non-Disclosure Agreement is entered into at
-              <variable name="place" question="Enter place"></variable> on
-              <variable name="date" question="Enter your date"></variable>
+              <strong><variable name="place" question="Enter place" optional></variable></strong> on
+              <strong><variable name="date" question="Enter your date" type="date"></variable></strong>
           </p>
       </guider>
       <p class="p2">
@@ -1923,7 +1923,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="party1details">
+      <guider description="Party1 Details">
           <p class="p1">
               <variable name="party1name" question="Enter party1 name?"></variable>, [FOR COMPANIES having registered office address at
               <variable name="party1registeredaddress" question="Enter party1 registered address"></variable>] [FOR INDIVIDUALS aged
@@ -1940,7 +1940,7 @@ templates:
       <p class="p2">
           <br>
       </p>
-      <guider description="Party2 details">
+      <guider description="Party2 Details">
           <p class="p2"><span style="font-family: inherit; line-height: 1.42857143;"><variable name="party2name" question="party2 name?"></variable>, [FOR COMPANIES having registered office address at {
               </span>
               <variable name="party2registeredaddress" question="Enter party2 registered address" style="font-family: inherit; line-height: 1.42857143;"></variable><span style="font-family: inherit; line-height: 1.42857143;">] [FOR INDIVIDUALS aged
@@ -2124,7 +2124,7 @@ templates:
       <li class="li2">In the event there is any change in the address of either the first party or the second party, the same shall be recorded by way of an Annexure to this Agreement.&nbsp;</li>
       </ol><p class="p1"><br></p><p class="p3">IN WITNESS WHEREOF, the Parties hereto have executed these presents the day, month and year first hereinabove written.</p><p class="p1"><br></p>
 
-      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
+      <p class="p3"><b>WITNESSES:&nbsp;</b></p><guider description="Witnesses Involved"><p class="p3"><b><i>_________________________</i></b></p><p class="p3">1 <i><variable name="nameofwitness1" question="Name of witness1"></variable></i>&nbsp;</p><p class="p3"><b><i>_________________________</i></b></p><p class="p3">2 <i><variable name="nameofwitness2" question="Name of witness2"></variable></i>&nbsp;</p></guider><p class="p1"><br></p><p class="p1"><br></p><p class="p3"><b><i>__________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _______________________</i></b></p><p class="p1"><br></p><p class="p3"><i><variable name="party1name"></variable> &nbsp; &nbsp; &nbsp; &nbsp; <variable name="party2name"></variable></i></p><p class="p1"><br></p><p class="p1"><br></p></font>
       </div>
       <p></p>
     - 2015-03-16 16:32:32.000000000 Z
