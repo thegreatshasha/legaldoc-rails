@@ -1,4 +1,4 @@
-angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-bar'])
+angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-bar', 'LocalStorageModule'])
 	.config(['$routeProvider',
 	  function($routeProvider) {
 	    $routeProvider.
@@ -58,9 +58,9 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 
 	   $templateCache.get('templates/variable.html');
 	})
-	.service('dataService', ['$location', '$http', '$rootScope', '$sce', function($location, $http, $rootScope, $sce){
+	.service('dataService', ['$location', '$http', '$rootScope', '$sce', 'localStorageService', function($location, $http, $rootScope, $sce, localStorageService){
 		var parent = this;
-		this.template = {};
+		this.template = localStorageService.get('template') || {};
 		this.templates = [];
 		this.adminFormPath = "/adminform";
 		this.downloadPath = "/download";
@@ -69,6 +69,7 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 		this.contact = {};
 		this.contactsUrl = "/contacts.json";
 		window.d = this;
+		debugger;
 
 		this.saveContact = function(){
 			this.contact.type = this.template.name;
@@ -132,6 +133,7 @@ angular.module("myapp", ['textAngular', 'ngRoute', 'xtForm', 'angular-loading-ba
 
 		this.chooseTemplate = function(template) {
 	      	this.template = template;
+	      	localStorageService.set('template', template);
 	      	//if(!scope.$$phase)
 	      	$location.path(this.customerFormPath);
 	    }
