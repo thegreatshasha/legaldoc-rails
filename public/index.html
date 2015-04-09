@@ -54,6 +54,12 @@
              tour[method]();
             }
         }
+
+        // Scroll positioning for tether. TODO: Find a more shepherdy solution
+        $el = $(".shepherd-element.shepherd-open.shepherd-step").css("top", "100px")
+        $(window).scroll(function(){
+            $el.css("top", "100px")
+        })
     </script>
 </head>
 
